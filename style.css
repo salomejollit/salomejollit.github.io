@@ -150,15 +150,15 @@ img{
 .description {
   margin-left: 30px;
   margin-right: 30px;
-  color: black;
   text-decoration: none;
+  color: black;
 }
 
 .sticky{
     position: sticky;
     top:15px;
-    color: black;
     text-decoration: none;
+    color: black;
 }
 
 .projectpage{
