@@ -85,9 +85,16 @@ img{
     height: fit-content;
 }
 
-.footer a{
+.footer {
     text-decoration: none;
     color: black;
+    font-family: "roc-grotesk", sans-serif;
+    font-weight: 10;
+    font-style: normal;
+    width: 100%;
+    font-size: 12px;
+    margin-left: 20px;
+    text-align: center;
 }
 
 .presentation {
@@ -213,3 +220,61 @@ img{
     margin-right: 30px;
     margin-top: 0px;
 }
+
+.grand-index{
+    margin: 10%;
+    text-decoration: none;
+}
+
+.grid-index {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    border-bottom: 0.5px solid rgb(154, 154, 154);
+    margin-top: 15px;
+}
+.index-proj a {
+    text-decoration: none;
+    color: black;
+    font-weight: 800;
+}
+
+.grid-cv {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    margin-top: 15px;
+    margin-left: 30px;
+}
+
+.titre-cv{
+    font-family: "roc-grotesk", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    width: 100%;
+    text-decoration: none;
+    color: black;
+    font-size: 25px;
+    border-bottom: 2px;
+}
+
+.cvsous{
+    font-family: "roc-grotesk", sans-serif;
+    font-weight: 550;
+    font-style: normal;
+    width: 100%;
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+    margin-top: 0px
+}
+
+.cvtxt{
+    font-family: "roc-grotesk", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    width: 100%;
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+    margin-top: 0px
+}
+
