@@ -1,93 +1,81 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Salomé Jollit Portfolio</title>
-    <link rel="stylesheet" href="https://use.typekit.net/xlk5mbj.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" type="image/png" href="initial.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #fff;
+      color: #000;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid #eee;
+    }
+
+    header nav a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 10px;
+      padding: 20px;
+    }
+
+    .grid-item {
+      aspect-ratio: 1 / 1; /* carré */
+      overflow: hidden;
+      position: relative;
+    }
+
+    .grid-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .grid-item:hover img {
+      transform: scale(1.05);
+    }
+  </style>
 </head>
 <body>
-    <header class="header">
-        <h1 class="title">PORTFOLIO </h1>
-        <nav class="nav">
-            <a href="cv.html">À PROPOS</a>
-            <br>
-            <a href="https://www.instagram.com/graphixsalome/" target="blank">@graphixsalome</a>
-        </nav>
-        <div class="logo">
-            <img alt="image" src="salome.png" width="300" height="240"/>
-        </div>
+  <header>
+    <div class="logo">Mon Portfolio</div>
+    <nav>
+      <a href="#">Work</a>
+      <a href="#">Speaking</a>
+      <a href="#">About</a>
+      <a href="#">Shop</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
 
-    </header>
-    <!-- <a class="Link-project" href="vamp.html">Le verre à moitié plein</a> -->
-    <div class="projects">
-        <a href="vamp.html">
-        <img src="photo/TAS_web.jpg" alt="demo">
-        <span>Le verre à moitié plein</span>
-        </a>
-
-        <a href="herbierimaginaire.html">
-        <img src="photo/fleurs_web.jpg" alt="demo">
-        <span>Herbier Imaginaire</span>
-        </a>
-
-        <a href="beatmakers.html">
-        <img src="photo/3 REVUES_web.jpg" alt="demo">
-        <span>Beatmakers</span>
-        </a>
-
-        <a href="chocolat.html">
-        <img src="photo/chocolat 2_web.jpg" alt="demo">
-        <span>Chocolat</span>
-        </a>
-
-        <a href="sem.html">
-        <img src="photo/semcouv_web.jpg" alt="demo">
-        <span>Sem</span>
-        </a>
-
-        <a href="bnf.html">
-        <img src="photo/bnf_web.jpg" alt="demo">
-        <span>Fiches BNF</span>
-        </a>
-
-        <a href="podcast.html">
-        <img src="photo/podcast lola_Plan de travail 1-02_web.jpg" alt="demo">
-        <span>Couverture podcast</span>
-        </a>
-
-        <a href="affiche jpo.html">
-        <img src="photo/jpotest_Plan de travail 1-06_web.jpg" alt="demo">
-        <span>Affiche JPO</span>
-        </a>
-
-        <a href="logoff.html">
-        <img src="photo/mockup2_web.jpg" alt="demo">
-        <span>Logoff</span>
-        </a>
-
-        <a href="urgence.html">
-        <img src="photo/COUVS_web.jpg" alt="demo">
-        <span>Urgence</span>
-        </a>
-
-        <a href="p5js.html">
-            <img src="photo/p5jscodage_web.jpg" alt="demo">
-            <span>Codage P5js</span>
-            </a>
-
-        <a href="aftereffects.html">
-            <img src="photo/finalJAUNE_web.jpg" alt="demo" width="400" height="400">
-            <span>After Effects</span>
-            </a>
+  <main class="grid">
+    <!-- Exemple de projet -->
+    <div class="grid-item">
+      <img src="projets/projet1.jpg" alt="Projet 1">
     </div>
-
-    <div class="footer">
-        <p>Copyright 2024 © Salomé Jollit .
-        Roc Grotesk Designed by Nikola Kostić and Zoran Kostić. From Kostic Type Foundry.</p></footer>
+    <div class="grid-item">
+      <img src="projets/projet2.jpg" alt="Projet 2">
     </div>
-   </body>
-
+    <div class="grid-item">
+      <img src="projets/projet3.jpg" alt="Projet 3">
+    </div>
+    <!-- Ajoute jusqu'à 16/17 projets -->
+  </main>
+</body>
 </html>
