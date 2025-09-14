@@ -331,8 +331,37 @@ img{
     main p {
       line-height: 1.6;
     }
+
+.projectpage {
+  display: flex;
+  gap: 24px;
+  padding: 20px;
+  align-items: flex-start;
+}
+
+/* Colonne photos */
+.projectpage .photos {
+  flex: 2; /* plus large */
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Colonne texte */
+.projectpage .description {
+  flex: 1; /* plus étroite */
+  position: relative; /* nécessaire pour le sticky */
+}
+
+/* Bloc texte sticky */
+.sticky {
+  position: sticky;
+  top: 20px; /* distance par rapport au haut de la fenêtre */
+}
+
   </style>
 </head>
+
 
 
 
