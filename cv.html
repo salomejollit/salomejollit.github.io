@@ -1,57 +1,78 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+  <link rel="shortcut icon" type="image/png" href="photo/logo_2.png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" type="image/png" href="photo/logo_2.png">
-  <title>À propos - Mon Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Salomé Jollit</title>
   <style>
     body {
-      font-family: "Helvetica Neue", Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      text-align: center;
-      color: #333;
+      font-family: sans-serif;
+      background: #fff;
+      color: #000;
     }
 
     header {
-      margin-top: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid #eee;
     }
 
-    header img {
-      max-width: 180px; /* taille du logo */
-      height: auto;
-    }
-
-    nav {
-      margin: 20px 0;
-      font-size: 1.1rem;
-    }
-
-    nav a {
-      text-decoration: none;
-      margin: 0 10px;
-      color: #555;
-    }
-
-    nav a.active {
-      color: goldenrod; /* couleur dorée comme sur ton exemple */
-      font-weight: 500;
-    }
-
-    main {
-      max-width: 800px;
-      margin: 60px auto;
-      padding: 0 20px;
-      line-height: 1.6;
-    }
-
-    strong {
+    .logo {
       font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    header nav a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 10px;
+      padding: 20px;
+    }
+
+    .grid-item {
+      aspect-ratio: 1 / 1; /* carré */
+      overflow: hidden;
+      position: relative;
+      background: #f0f0f0; /* couleur de fond si pas d'image */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      color: #666;
+    }
+
+    .grid-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .grid-item:hover img {
+      transform: scale(1.05);
     }
   </style>
 </head>
+<body>
+  <header>
+    <div class="logo">Salomé Jollit</div>
+    <nav>
+      <a href="#">Work</a>
+      <a href="cv.html">About</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
 <body>
   <header>
     <!-- Ton logo -->
@@ -98,6 +119,7 @@
   </main>
 </body>
 </html>
+
 
 
 
