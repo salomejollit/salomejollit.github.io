@@ -1,43 +1,165 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projets</title>
-    <link rel="stylesheet" href="https://use.typekit.net/xlk5mbj.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" type="image/jpg" href="initial.png">
+  <link rel="shortcut icon" type="image/png" href="photo/logo_2.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salomé Jollit</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #fff;
+      color: #000;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid #eee;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    header nav a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+    }
+
+    /* Styles existants laissés au cas où tu les utilises ailleurs */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 10px;
+      padding: 20px;
+    }
+
+    .grid-item {
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+      position: relative;
+      background: #f0f0f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      color: #666;
+    }
+
+    .grid-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .grid-item:hover img {
+      transform: scale(1.05);
+    }
+
+    /* === Mise en page deux colonnes pour la page projet === */
+    .projectpage {
+      display: flex;
+      gap: 24px;
+      padding: 20px;
+      align-items: flex-start;
+    }
+
+    /* Colonne photos (gauche) */
+    .projectpage .photos {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .projectpage .photos img {
+      width: 100%;
+      height: auto;
+      max-height: calc(100vh - 160px); /* évite des images trop grandes */
+      object-fit: cover;
+      border-radius: 6px;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .projectpage .photos img:hover {
+      transform: scale(1.02);
+    }
+
+    /* Colonne texte (droite) */
+    .projectpage .description {
+      flex: 1;
+      padding: 10px 20px;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .sticky {
+      position: sticky;
+      top: 1rem;
+    }
+
+    .suivant, .precedent {
+      display: inline-block;
+      margin-top: 12px;
+      margin-right: 8px;
+      text-decoration: none;
+      color: inherit;
+      border: 1px solid #ddd;
+      padding: 8px 12px;
+      border-radius: 6px;
+    }
+
+    /* Responsive : empilement sur petits écrans */
+    @media (max-width: 700px) {
+      .projectpage {
+        flex-direction: column;
+      }
+      .projectpage .photos img {
+        max-height: none;
+      }
+      .sticky {
+        position: static;
+      }
+    }
+  </style>
 </head>
 <body>
-<header class="verre">
-    <a href="index.html" class="title">PROJETS </a>
-    <a href="grille.html" class="spec">ÉDITION</a>
-    <nav class="nav">
-        <a href="cv.html">À PROPOS</a>
-        <br>
-        <a href="https://www.instagram.com/graphixsalome/" target="blank">@graphixsalome</a>
+  <header>
+    <div class="logo">Salomé Jollit</div>
+    <nav>
+      <a href="index.html">Work</a>
+      <a href="cv.html">About</a>
+      <a href="contact.html">Contact</a>
     </nav>
-</header>
+  </header>
 
-<div class="projectpage">
-    <div>
+  <main class="projectpage">
+    <div class="photos">
       <img class="img" src="photo/fanzine5_web.jpg" alt="img">
       <img class="img" src="photo/COUV_web.jpg" alt="img">
       <img class="img" src="photo/fleurs_web.jpg" alt="img">
       <img class="img" src="photo/4COUV_web.jpg" alt="img">
       <img class="img" src="photo/3fleurs_web.jpg" alt="img">
     </div>
-<div class="description"> 
-            <div class="sticky">
-                <p><strong>HERBIER IMAGINAIRE</strong>
-                <br>
-                <br>
-                Réalisation d’un livret en risographie. D’après les recherches, avec le réchauffement climatique les plantes seront plus grandes et volumineuses. Cela m’a amené à penser à une vengeance de la part des fleurs sur les humains afin qu’ils prennent conscience des dégâts qu’ils ont causés aux plantes avec la pollution. Ce livret est une source d’information pour montrer aux futures populations pourquoi les fleurs se sont métamorphosées.</p>
-                <a class="suivant" href="beatmakers.html">Suivant</a>
-                <a class="precedent" href="index.html">Accueil</a>
-            </div>
-     
-  </div>
 
-<body>
+    <aside class="description"> 
+      <div class="sticky">
+        <p><strong>IMAGINARY HERBARIUM</strong>
+          <br><br>
+Creation of a risograph booklet. According to research, global warming will cause plants to grow larger and more voluminous. This led me to think of flowers taking revenge on humans to make them aware of the damage they have caused to plants through pollution. This booklet is a source of information to show future populations why flowers have undergone this transformation.        </p>
+        <a class="suivant" href="chocolat.html">Suivant</a>
+        <a class="precedent" href="index.html">Accueil</a>
+      </div>
+    </aside>
+  </main>
+</body>
 </html>
