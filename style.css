@@ -290,4 +290,49 @@ img{
   margin-left: 30px; /* décalage vers la droite */
 }
 
+<head>
+  <meta charset="UTF-8">
+  <title>Salomé Jollit</title>
+  <style>
+    /* Centrer tout le contenu */
+    body {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Centrer l’image et la réduire */
+    .logo img {
+      display: block;
+      margin: 0 auto;
+      max-width: 200px; /* Change la taille ici si tu veux plus petit */
+      height: auto;
+    }
+
+    /* Réduction des retraits */
+    .retrait {
+      margin-left: 20px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    nav a {
+      margin-left: 15px;
+      text-decoration: none;
+      color: black;
+    }
+
+    main p {
+      line-height: 1.6;
+    }
+  </style>
+</head>
+
+
 
