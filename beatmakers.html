@@ -74,27 +74,28 @@
     </nav>
   </header>
 <body>
-<div class="projectpage">
-    <div>
-      <img class="img" src="photo/3b_web.jpg" alt="img">
-      <img class="img" src="photo/piano_web.jpg" alt="img">
-      <img class="img" src="photo/track_web.jpg" alt="img">
-      <img class="img" src="photo/animalson_web.jpg" alt="img">
-    </div>
-<div class="description"> 
-            <div class="sticky">
-                <p><strong>BEATMAKERS</strong>
-                <br>
-                <br>
-                Conception d’un principe de collection éditoriale consistant à faire découvrir le travail des BeatMakers à partir des podcasts d’Arte radio. Leur instrument phare est incrusté dans leur initiale sur la 1er et 4e de couverture où l’on reprend les bandes-sons, ce qui renvoie au rythme et au séquençage du son.</p>
-                <a class="suivant" href="chocolat.html">Suivant</a>
-                <a class="precedent" href="index.html">Accueil</a>
-            </div>
-     
-  </div>
+export default function Page() {
+  return (
+    <div className="flex h-screen">
+      {/* Colonne gauche : photos */}
+      <div className="w-1/2 bg-gray-100 flex flex-col items-center justify-center gap-4 p-4">
+        <img src="/photo1.jpg" alt="Photo 1" className="max-w-[90%] rounded-xl shadow" />
+        <img src="/photo2.jpg" alt="Photo 2" className="max-w-[90%] rounded-xl shadow" />
+      </div>
 
-<body>
+      {/* Colonne droite : texte */}
+      <div className="w-1/2 bg-white p-8 overflow-y-auto">
+        <h1 className="text-3xl font-bold mb-4">Titre de la section</h1>
+        <p className="text-lg leading-relaxed">
+          Voici ton texte qui s’affiche dans la moitié droite de la page.
+          Tu peux ajouter autant de paragraphes, titres, ou listes que tu veux.
+        </p>
+      </div>
+    </div>
+  );
+}
 
 </html>
+
 
 
