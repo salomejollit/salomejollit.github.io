@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <link rel="shortcut icon" type="image/png" href="photo/logo_2.png">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Salomé Jollit</title>
   <style>
+    * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: sans-serif;
@@ -21,88 +21,90 @@
       border-bottom: 1px solid #eee;
     }
 
-    /* Lien du logo/nom */
     .brand {
-      text-decoration: none; /* enlève le soulignement */
-      color: #000; /* noir */
+      text-decoration: none;
+      color: #000;
       font-weight: bold;
       font-size: 1.2rem;
     }
 
-    .brand:hover {
-      text-decoration: underline; /* optionnel : souligné au survol */
-    }
-
-    header nav a {
-      margin-left: 1.5rem;
+    nav a {
+      margin-left: 1.2rem;
       text-decoration: none;
       color: #000;
       font-weight: bold;
     }
 
-    /* Mise en page deux colonnes */
+    /* Conteneur principal : deux colonnes (photos / description) */
     .projectpage {
       display: flex;
+      gap: 24px;
       padding: 20px;
+      align-items: flex-start;
     }
 
-    /* Colonne gauche (photos) */
+    /* Colonne photos : grille responsive d'iframes */
     .photos {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
+      flex: 2; /* prend plus d'espace */
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 12px;
-      margin-right: 35%; /* laisse la place pour la colonne fixe */
+      width: 100%;
     }
 
-    .photos img {
+    /* iframes responsives (fallback height pour anciens navigateurs) */
+    .photos iframe {
       width: 100%;
-      height: auto;
+      aspect-ratio: 1 / 1; /* carré */
+      height: 300px;        /* fallback si aspect-ratio non supporté */
+      border: 0;
       border-radius: 6px;
       display: block;
+      overflow: hidden;
+      background: #fafafa;
     }
 
-    /* Colonne droite (texte fixe) */
+    /* Colonne description (occupant l'espace à droite) */
     .description {
-      position: fixed;
-      right: 30px;
-      top: 50px; /* <-- corrigé ici */
-      width: 30%;
-      background: #fff;
+      flex: 1;
+      position: relative; /* nécessaire pour sticky */
+      padding: 0 16px;
+      min-width: 240px; /* évite qu'elle devienne trop petite */
+    }
+
+    .sticky {
+      position: sticky;
+      top: 20px; /* distance depuis le haut (header) */
     }
 
     .suivant, .precedent {
       display: inline-block;
-      margin-top: 12px;
-      margin-right: 8px;
       text-decoration: none;
-      color: inherit;
+      color: #000;
       border: 1px solid #ddd;
       padding: 8px 12px;
       border-radius: 6px;
+      margin-top: 12px;
+      margin-right: 8px;
     }
 
-    /* Responsive */
+    /* Responsive : empiler sur petit écran */
     @media (max-width: 700px) {
       .projectpage {
         flex-direction: column;
+        padding: 12px;
       }
       .photos {
-        margin-right: 0;
+        grid-template-columns: 1fr;
       }
-      .description {
-        position: static;
-        width: 100%;
-        margin-top: 20px;
-      }
+      .photos iframe { height: 250px; }
+      .description { position: static; min-width: auto; padding: 0; }
     }
   </style>
 </head>
 <body>
   <header>
-    <!-- Salomé Jollit cliquable -->
     <a href="index.html" class="brand">Salomé Jollit</a>
-    
     <nav>
       <a href="index.html">Work</a>
       <a href="cv.html">About</a>
@@ -111,22 +113,23 @@
   </header>
 
   <main class="projectpage">
-    <!-- Colonne gauche -->
-   <div class="projectpage">
-    <div>
-        <iframe class="img" src="photo/p5jssketch1.html" frameborder="0" width="400" height="400" scrolling="no"></iframe>
-        <iframe class="img" src="p5js/index.html" frameborder="0" width="400" height="400" scrolling="no"></iframe>
-        <iframe class="img" src="sketch2/indexsketch2.html" frameborder="0" width="400" height="400" scrolling="no"></iframe>
-        <iframe class="img" src="skecth3/indexskecth3.html" frameborder="0" width="400" height="400" scrolling="no"></iframe>
+    <!-- Colonne gauche : photos/iframes -->
+    <div class="photos">
+      <iframe class="img" src="photo/p5jssketch1.html" scrolling="no" title="sketch 1"></iframe>
+      <iframe class="img" src="p5js/index.html" scrolling="no" title="sketch 2"></iframe>
+      <iframe class="img" src="sketch2/indexsketch2.html" scrolling="no" title="sketch 3"></iframe>
+      <iframe class="img" src="skecth3/indexskecth3.html" scrolling="no" title="sketch 4"></iframe>
     </div>
 
-
-    <!-- Colonne droite -->
+    <!-- Colonne droite : description sticky -->
     <aside class="description">
-      <p><strong>P5JS CODING</strong><br><br>
-Experimenting with different generative graphic forms, playing with code parameters to produce digital animations with P5Js.      </p>
-      <a class="suivant" href="gims.html">Next</a>
-      <a class="precedent" href="index.html">Home</a>
+      <div class="sticky">
+        <p><strong>P5JS CODING</strong><br><br>
+        Experimenting with different generative graphic forms, playing with code parameters to produce digital animations with P5Js.
+        </p>
+        <a class="suivant" href="gims.html">Next</a>
+        <a class="precedent" href="index.html">Home</a>
+      </div>
     </aside>
   </main>
 </body>
