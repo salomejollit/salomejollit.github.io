@@ -21,9 +21,16 @@
       border-bottom: 1px solid #eee;
     }
 
-    .logo {
+    /* Lien du logo/nom */
+    .brand {
+      text-decoration: none; /* enlève le soulignement */
+      color: #000; /* noir */
       font-weight: bold;
       font-size: 1.2rem;
+    }
+
+    .brand:hover {
+      text-decoration: underline; /* optionnel : souligné au survol */
     }
 
     header nav a {
@@ -33,78 +40,35 @@
       font-weight: bold;
     }
 
-    /* Styles existants laissés au cas où tu les utilises ailleurs */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 10px;
-      padding: 20px;
-    }
-
-    .grid-item {
-      aspect-ratio: 1 / 1;
-      overflow: hidden;
-      position: relative;
-      background: #f0f0f0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1rem;
-      color: #666;
-    }
-
-    .grid-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.3s ease;
-    }
-
-    .grid-item:hover img {
-      transform: scale(1.05);
-    }
-
-    /* === Mise en page deux colonnes pour la page projet === */
+    /* Mise en page deux colonnes */
     .projectpage {
       display: flex;
-      gap: 24px;
       padding: 20px;
-      align-items: flex-start;
     }
 
-    /* Colonne photos (gauche) */
-    .projectpage .photos {
+    /* Colonne gauche (photos) */
+    .photos {
       flex: 1;
       display: flex;
       flex-direction: column;
       gap: 12px;
+      margin-right: 35%; /* laisse la place pour la colonne fixe */
     }
 
-    .projectpage .photos img {
+    .photos img {
       width: 100%;
       height: auto;
-      max-height: calc(100vh - 160px); /* évite des images trop grandes */
-      object-fit: cover;
       border-radius: 6px;
       display: block;
-      transition: transform 0.3s ease;
     }
 
-    .projectpage .photos img:hover {
-      transform: scale(1.02);
-    }
-
-    /* Colonne texte (droite) */
-    .projectpage .description {
-      flex: 1;
-      padding: 10px 20px;
-      display: flex;
-      align-items: flex-start;
-    }
-
-    .sticky {
-      position: sticky;
-      top: 1rem;
+    /* Colonne droite (texte fixe) */
+    .description {
+      position: fixed;
+      right: 30px;
+      top: 50px; /* <-- corrigé ici */
+      width: 30%;
+      background: #fff;
     }
 
     .suivant, .precedent {
@@ -118,23 +82,27 @@
       border-radius: 6px;
     }
 
-    /* Responsive : empilement sur petits écrans */
+    /* Responsive */
     @media (max-width: 700px) {
       .projectpage {
         flex-direction: column;
       }
-      .projectpage .photos img {
-        max-height: none;
+      .photos {
+        margin-right: 0;
       }
-      .sticky {
+      .description {
         position: static;
+        width: 100%;
+        margin-top: 20px;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="logo">Salomé Jollit</div>
+    <!-- Salomé Jollit cliquable -->
+    <a href="index.html" class="brand">Salomé Jollit</a>
+    
     <nav>
       <a href="index.html">Work</a>
       <a href="cv.html">About</a>
@@ -143,21 +111,20 @@
   </header>
 
   <main class="projectpage">
+    <!-- Colonne gauche -->
     <div class="photos">
-      <img class="img" src="photo/chcoloat_web.jpg" alt="img">
-      <img class="img" src="photo/chocolat 3_web.jpg" alt="img">
-      <img class="img" src="photo/chocolat 2_web.jpg" alt="img">
+      <img src="photo/3b_web.jpg" alt="img">
+      <img src="photo/piano_web.jpg" alt="img">
+      <img src="photo/track_web.jpg" alt="img">
+      <img src="photo/animalson_web.jpg" alt="img">
     </div>
 
-    <aside class="description"> 
-      <div class="sticky">
-        <p><strong>CHOCOLAT</strong>
-          <br><br>
-          Creation of an identity for La Maison du Chocolat. The aim was to take consumers on a journey with a collection of packaging reflecting the cultural characteristics of a country. The principle of collage was used in this project, inspired by the aesthetic language of Mathilde AUBIER. I took the elements that make up the country's identity to create a pattern and highlight it on the front of the packaging.
-        </p>
-        <a class="suivant" href="chocolat.html">Suivant</a>
-        <a class="precedent" href="index.html">Accueil</a>
-      </div>
+    <!-- Colonne droite -->
+    <aside class="description">
+      <p><strong>CHOCOLAT</strong><br><br>
+Creation of an identity for La Maison du Chocolat. The aim was to take consumers on a journey with a collection of packaging reflecting the cultural characteristics of a country. The principle of collage was used in this project, inspired by the aesthetic language of Mathilde AUBIER. I took the elements that make up the country's identity to create a pattern and highlight it on the front of the packaging.      </p>
+      <a class="suivant" href="chocolat.html">Next</a>
+      <a class="precedent" href="index.html">Home</a>
     </aside>
   </main>
 </body>
