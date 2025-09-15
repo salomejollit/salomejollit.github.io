@@ -364,8 +364,20 @@ img{
   color: #000; /* couleur noire */
 }
 
+.brand {
+  text-decoration: none;
+  color: #000; /* couleur de base */
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: color 0.3s ease; /* petit effet fluide */
+}
+
 .brand:hover {
-  text-decoration: underline; /* optionnel : souligné au survol */
+  color: #f7dbeb; /* couleur quand on passe la souris */
+}
+
+.brand:active {
+  color: #f6b6d9; /* couleur quand on clique */
 }
 
 .logo-text {
@@ -375,6 +387,7 @@ img{
 
   </style>
 </head>
+
 
 
 
