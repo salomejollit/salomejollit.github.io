@@ -360,11 +360,6 @@ img{
 }
 
 .brand {
-  text-decoration: none; /* enlève le soulignement */
-  color: #000; /* couleur noire */
-}
-
-.brand {
   text-decoration: none;
   color: #000; /* couleur de base */
   font-weight: bold;
@@ -387,6 +382,7 @@ img{
 
   </style>
 </head>
+
 
 
 
