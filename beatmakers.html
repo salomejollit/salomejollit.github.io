@@ -21,9 +21,16 @@
       border-bottom: 1px solid #eee;
     }
 
-    .logo {
+    /* Lien du logo/nom */
+    .brand {
+      text-decoration: none; /* enlève le soulignement */
+      color: #000; /* noir */
       font-weight: bold;
       font-size: 1.2rem;
+    }
+
+    .brand:hover {
+      text-decoration: underline; /* optionnel : souligné au survol */
     }
 
     header nav a {
@@ -59,8 +66,8 @@
     .description {
       position: fixed;
       right: 30px;
-      top: 5Opx; /* descend un peu sous le header */
-      width: 30%; /* largeur fixe sinon ça chevauche */
+      top: 50px; /* <-- corrigé ici */
+      width: 30%;
       background: #fff;
     }
 
@@ -75,7 +82,7 @@
       border-radius: 6px;
     }
 
-    /* Responsive : empilement sur petits écrans */
+    /* Responsive */
     @media (max-width: 700px) {
       .projectpage {
         flex-direction: column;
@@ -93,15 +100,15 @@
 </head>
 <body>
   <header>
-    <a href="index.html">Salomé Jollit</a>
+    <!-- Salomé Jollit cliquable -->
+    <a href="index.html" class="brand">Salomé Jollit</a>
     
-  <nav>
-    <a href="index.html">Work</a>
-    <a href="cv.html">About</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
-
+    <nav>
+      <a href="index.html">Work</a>
+      <a href="cv.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
   <main class="projectpage">
     <!-- Colonne gauche -->
@@ -112,10 +119,10 @@
       <img src="photo/animalson_web.jpg" alt="img">
     </div>
 
-    <!-- Colonne droite (fixe) -->
+    <!-- Colonne droite -->
     <aside class="description">
       <p><strong>BEATMAKERS</strong><br><br>
-Design of an editorial collection concept consisting of showcasing the work of BeatMakers through Arte radio podcasts. Their signature instrument is embedded in their initials on the front and back covers, where soundtracks are featured, reflecting the rhythm and sequencing of sound.
+        Design of an editorial collection concept consisting of showcasing the work of BeatMakers through Arte radio podcasts. Their signature instrument is embedded in their initials on the front and back covers, where soundtracks are featured, reflecting the rhythm and sequencing of sound.
       </p>
       <a class="suivant" href="chocolat.html">Next</a>
       <a class="precedent" href="index.html">Home</a>
@@ -123,11 +130,3 @@ Design of an editorial collection concept consisting of showcasing the work of B
   </main>
 </body>
 </html>
-
-
-
-
-
-
-
-
