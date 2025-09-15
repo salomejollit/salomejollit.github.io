@@ -359,8 +359,19 @@ img{
   top: 20px; /* distance par rapport au haut de la fenêtre */
 }
 
+.brand {
+  text-decoration: none;
+  color: #000; /* garde le texte noir */
+}
+
+.logo-text {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
   </style>
 </head>
+
 
 
 
