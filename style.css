@@ -360,8 +360,12 @@ img{
 }
 
 .brand {
-  text-decoration: none;
-  color: #000; /* garde le texte noir */
+  text-decoration: none; /* enlève le soulignement */
+  color: #000; /* couleur noire */
+}
+
+.brand:hover {
+  text-decoration: underline; /* optionnel : souligné au survol */
 }
 
 .logo-text {
@@ -371,6 +375,7 @@ img{
 
   </style>
 </head>
+
 
 
 
