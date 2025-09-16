@@ -21,16 +21,15 @@
       border-bottom: 1px solid #eee;
     }
 
-    /* Lien du logo/nom */
     .brand {
-      text-decoration: none; /* enlève le soulignement */
-      color: #000; /* noir */
+      text-decoration: none;
+      color: #000;
       font-weight: bold;
       font-size: 1.2rem;
     }
 
     .brand:hover {
-      text-decoration: underline; /* optionnel : souligné au survol */
+      text-decoration: underline;
     }
 
     header nav a {
@@ -46,13 +45,13 @@
       padding: 20px;
     }
 
-    /* Colonne gauche (photos) */
+    /* Colonne gauche (photos en grille) */
     .photos {
       flex: 1;
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* 2 images par ligne */
       gap: 12px;
-      margin-right: 35%; /* laisse la place pour la colonne fixe */
+      margin-right: 35%;
     }
 
     .photos img {
@@ -60,13 +59,14 @@
       height: auto;
       border-radius: 6px;
       display: block;
+      object-fit: cover;
     }
 
     /* Colonne droite (texte fixe) */
     .description {
       position: fixed;
       right: 30px;
-      top: 50px; /* <-- corrigé ici */
+      top: 50px;
       width: 30%;
       background: #fff;
     }
@@ -83,11 +83,9 @@
     }
 
     /* Responsive */
-    @media (max-width: 700px) {
-      .projectpage {
-        flex-direction: column;
-      }
+    @media (max-width: 900px) {
       .photos {
+        grid-template-columns: 1fr; /* 1 image par ligne sur petits écrans */
         margin-right: 0;
       }
       .description {
@@ -100,9 +98,7 @@
 </head>
 <body>
   <header>
-    <!-- Salomé Jollit cliquable -->
     <a href="index.html" class="brand">Salomé Jollit</a>
-    
     <nav>
       <a href="index.html">Work</a>
       <a href="cv.html">About</a>
@@ -113,28 +109,25 @@
   <main class="projectpage">
     <!-- Colonne gauche -->
     <div class="photos">
-      <img class="img" src="GIMS_Ecouteurs_Tshirt_Album.png" alt="img" >
-      <img class="img" src="GIMS_DISCOGRAPHY_Tshirt_Blanc.png" alt="img" >
-      <img class="img" src="Capture d'écran 2025-04-07 150238.png" alt="img">
-      <img class="img" src="GIMS_Tshit_Blanc_2.png" alt="img" >
-      <img class="img" src="06_GIMS_Lunettes_Noir_2.png" alt="img" >
-      <img class="img" src="GIMS_G_OR_MAINS_Tshirt.png" alt="img">
-      <img class="img" src="GIMS_Vintage_Orange_Noir_Tshirt.png" alt="img" >
-
+      <img src="GIMS_Ecouteurs_Tshirt_Album.png" alt="img" loading="lazy">
+      <img src="GIMS_DISCOGRAPHY_Tshirt_Blanc.png" alt="img" loading="lazy">
+      <img src="Capture.png" alt="img" loading="lazy">
+      <img src="GIMS_Tshit_Blanc_2.png" alt="img" loading="lazy">
+      <img src="06_GIMS_Lunettes_Noir_2.png" alt="img" loading="lazy">
+      <img src="GIMS_G_OR_MAINS_Tshirt.png" alt="img" loading="lazy">
+      <img src="GIMS_Vintage_Orange_Noir_Tshirt.png" alt="img" loading="lazy">
     </div>
 
     <!-- Colonne droite -->
     <aside class="description">
       <p><strong>GIMS MERCHANDISING X OFFSTAGE</strong><br><br>
-Creation of a merchandising collection for summer 2024, aligned with Gims’
-visual universe and current trends.
-By analyzing his target audience and fashion influences, I was able to
-incorporate the burgeoning brat summer aesthetic while staying true to
-his artistic direction. The result is modern, impactful merch that resonates
-with a cross-generational audience.
-        
-        <BR>This collaboration is a fictional collection between the artist Gims and the Offstage website.<BR>
-        
+        Creation of a merchandising collection for summer 2024, aligned with Gims’
+        visual universe and current trends.
+        By analyzing his target audience and fashion influences, I was able to
+        incorporate the burgeoning brat summer aesthetic while staying true to
+        his artistic direction. The result is modern, impactful merch that resonates
+        with a cross-generational audience.<br><br>
+        This collaboration is a fictional collection between the artist Gims and the Offstage website.
       </p>
       <a class="suivant" href="guerrisol.html">Next</a>
       <a class="precedent" href="index.html">Home</a>
@@ -142,4 +135,3 @@ with a cross-generational audience.
   </main>
 </body>
 </html>
-
