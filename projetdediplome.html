@@ -1,23 +1,137 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projets</title>
-    <link rel="stylesheet" href="https://use.typekit.net/xlk5mbj.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" type="image/jpg" href="initial.png">
+  <link rel="shortcut icon" type="image/png" href="photo/logo_2.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salomé Jollit</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #fff;
+      color: #000;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid #eee;
+    }
+
+    /* Lien du logo/nom */
+    .brand {
+      text-decoration: none; /* enlève le soulignement */
+      color: #000; /* noir */
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .brand:hover {
+      text-decoration: underline; /* optionnel : souligné au survol */
+    }
+
+    header nav a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+    }
+
+    /* Mise en page deux colonnes */
+    .projectpage {
+      display: flex;
+      padding: 20px;
+    }
+
+    /* Colonne gauche (photos) */
+    .photos {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-right: 35%; /* laisse la place pour la colonne fixe */
+    }
+
+    .photos img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+      display: block;
+    }
+
+    /* Colonne droite (texte fixe) */
+    .description {
+      position: fixed;
+      right: 30px;
+      top: 50px; /* <-- corrigé ici */
+      width: 30%;
+      background: #fff;
+    }
+
+    .suivant, .precedent {
+      display: inline-block;
+      margin-top: 12px;
+      margin-right: 8px;
+      text-decoration: none;
+      color: inherit;
+      border: 1px solid #ddd;
+      padding: 8px 12px;
+      border-radius: 6px;
+    }
+
+    /* Responsive */
+    @media (max-width: 700px) {
+      .projectpage {
+        flex-direction: column;
+      }
+      .photos {
+        margin-right: 0;
+      }
+      .description {
+        position: static;
+        width: 100%;
+        margin-top: 20px;
+      }
+    }
+  </style>
 </head>
 <body>
-<header class="verre">
-    <a href="index.html" class="title">PROJETS </a>
-    <a href="grille.html" class="spec">IDENTITÉ VISUELLE</a>
-    <nav class="nav">
-        <a href="cv.html">À PROPOS</a>
-        <br>
-        <a href="https://instagram.com" target="blank">@graphixsalome</a>
+  <header>
+    <!-- Salomé Jollit cliquable -->
+    <a href="index.html" class="brand">Salomé Jollit</a>
+    
+    <nav>
+      <a href="index.html">Work</a>
+      <a href="cv.html">About</a>
+      <a href="contact.html">Contact</a>
     </nav>
-</header>
+  </header>
 
-<div class="projectpage">
-    <div>
+  <main class="projectpage">
+    <!-- Colonne gauche -->
+    <div class="photos">
+      <img src="photo/3b_web.jpg" alt="img">
+      <img src="photo/piano_web.jpg" alt="img">
+      <img src="photo/track_web.jpg" alt="img">
+      <img src="photo/animalson_web.jpg" alt="img">
+    </div>
+
+    <!-- Colonne droite -->
+    <aside class="description">
+      <p><strong>DEAFLYMPICS</strong><br><br>
+For my diploma project, I designed the campaign for the 2026 Paris Deaflympics. The goal
+was to come up with a low-budget communication strategy that would give the event
+a spectacular dimension while highlighting its unifying power. Through a participatory
+campaign, the project emphasizes that the Deaflympics are not just a sporting competition,
+but also a time for sharing and meeting others, an event that creates a bond with the public.
+          <BR>This campaign is conducted in a fictional setting.<BR>
+      </p>
+      <a class="suivant" href="beatmakers.html">Next</a>
+      <a class="precedent" href="index.html">Home</a>
+    </aside>
+  </main>
+</body>
+</html>
