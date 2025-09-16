@@ -1,43 +1,134 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projets</title>
-    <link rel="stylesheet" href="https://use.typekit.net/xlk5mbj.css">
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" type="image/jpg" href="initial.png">
+  <link rel="shortcut icon" type="image/png" href="photo/logo_2.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salomé Jollit</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #fff;
+      color: #000;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid #eee;
+    }
+
+    /* Lien du logo/nom */
+    .brand {
+      text-decoration: none; /* enlève le soulignement */
+      color: #000; /* noir */
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    .brand:hover {
+      text-decoration: underline; /* optionnel : souligné au survol */
+    }
+
+    header nav a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+    }
+
+    /* Mise en page deux colonnes */
+    .projectpage {
+      display: flex;
+      padding: 20px;
+    }
+
+    /* Colonne gauche (photos) */
+    .photos {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-right: 35%; /* laisse la place pour la colonne fixe */
+    }
+
+    .photos img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+      display: block;
+    }
+
+    /* Colonne droite (texte fixe) */
+    .description {
+      position: fixed;
+      right: 30px;
+      top: 50px; /* <-- corrigé ici */
+      width: 30%;
+      background: #fff;
+    }
+
+    .suivant, .precedent {
+      display: inline-block;
+      margin-top: 12px;
+      margin-right: 8px;
+      text-decoration: none;
+      color: inherit;
+      border: 1px solid #ddd;
+      padding: 8px 12px;
+      border-radius: 6px;
+    }
+
+    /* Responsive */
+    @media (max-width: 700px) {
+      .projectpage {
+        flex-direction: column;
+      }
+      .photos {
+        margin-right: 0;
+      }
+      .description {
+        position: static;
+        width: 100%;
+        margin-top: 20px;
+      }
+    }
+  </style>
 </head>
 <body>
-<header class="verre">
-    <a href="index.html" class="title">PROJETS </a>
-    <a href="grille.html" class="spec">PRINT</a>
-    <nav class="nav">
-        <a href="cv.html">À PROPOS</a>
-        <br>
-        <a href="https://www.instagram.com/graphixsalome/" target="blank">@graphixsalome</a>
+  <header>
+    <!-- Salomé Jollit cliquable -->
+    <a href="index.html" class="brand">Salomé Jollit</a>
+    
+    <nav>
+      <a href="index.html">Work</a>
+      <a href="cv.html">About</a>
+      <a href="contact.html">Contact</a>
     </nav>
-</header>
+  </header>
 
-<div class="projectpage">
-    <div>
-    <img class="img" src="photo/affichejpo_web.jpg" alt="img" >
+  <main class="projectpage">
+    <!-- Colonne gauche -->
+    <div class="photos">
+      <img class="img" src="photo/affichejpo_web.jpg" alt="img" >
       <img class="img" src="photo/JAUNE_web.jpg" alt="img" >
       <img class="img" src="photo/BLANCHE MAIN_web.jpg" alt="img">
-    </div>
-<div class="description"> 
-            <div class="sticky">
-                <p><strong>AFFICHE PORTES OUVERTES</strong>
-                <br>
-                <br>
-                Conception de l’affiche des journées Portes Ouvertes du lycée des Arts et Métiers Auguste Renoir. 
-                Le concept était de mettre en avant le titre « JPO 2024». 
-                Pour ce faire, j’ai choisi d’orienter le titre de manière verticale en utilisant un marker pour rappeler les spécificités de l’école.</p>
-                <a class="suivant" href="logoff.html">Suivant</a>
-                <a class="precedent" href="index.html">Accueil</a>
-            </div>
-     
-  </div>
 
-<body>
+    </div>
+
+    <!-- Colonne droite -->
+    <aside class="description">
+      <p><strong>SCHOOL OPEN DAY POSTERS</strong><br><br>
+Design of the poster for the Open House at the ELMAD Auguste Renoir School of Art and Design.
+The concept was to highlight the title “JPO 2024.”
+To do this, I chose to orient the title vertically, using a marker to highlight the school's unique features.
+      </p>
+      <a class="suivant" href="chocolat.html">Next</a>
+      <a class="precedent" href="index.html">Home</a>
+    </aside>
+  </main>
+</body>
 </html>
