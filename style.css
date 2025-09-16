@@ -93,6 +93,10 @@
       .projectpage { flex-direction: column; }
       .projectpage .description { position: static; width: 100%; margin-top: 20px; padding: 0; }
     }
+.full-width {
+  grid-column: span 2; /* l'image prend toute la ligne */
+}
+
   </style>
 </head>
 <body>
@@ -127,3 +131,4 @@
   </main>
 </body>
 </html>
+
