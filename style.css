@@ -1,109 +1,101 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Salomé Jollit</title>
-  <style>
-    /* reset simple */
-    * { box-sizing: border-box; }
+/* reset simple */
+* { box-sizing: border-box; }
 
-    body {
-      margin: 0;
-      font-family: "roc-grotesk", sans-serif;
-      color: #000;
-      width: 100%;
-    }
+body {
+  margin: 0;
+  font-family: "roc-grotesk", sans-serif;
+  color: #000;
+  width: 100%;
+}
 
-    /* header (propre et simple) */
-    .tete {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 8px;
-      align-items: center;
-      padding: 10px 30px;
-      border-bottom: 2px solid #ddd;
-    }
+/* header (propre et simple) */
+.tete {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+  align-items: center;
+  padding: 10px 30px;
+  border-bottom: 2px solid #ddd;
+}
 
-   .brand {
+.brand {
   text-decoration: none !important; /* force l'absence de soulignement */
   color: #000000;
   font-weight: 800;
   font-size: 1.2rem;
   transition: color 0.25s ease;
 }
-
-.brand:hover {
-  text-decoration: none !important; /* empêche le soulignement au hover */
-  color: #000000;
-}
-
+.brand:hover,
 .brand:active {
-  text-decoration: none !important; /* empêche le soulignement au clic */
+  text-decoration: none !important;
   color: #000000;
 }
 
+/* nav */
+.nav a {
+  margin-left: 15px;
+  text-decoration: none;
+  color: #000;
+  font-weight: 700;
+  transition: color 0.2s ease;
+}
+.nav a:hover { color: #555; }
 
-    /* nav */
-    .nav a {
-      margin-left: 15px;
-      text-decoration: none;
-      color: #000;
-      font-weight: 700;
-      transition: color 0.2s ease;
-    }
-    .nav a:hover { color: #555; }
+/* layout de la page projet */
+.projectpage {
+  display: flex;
+  gap: 24px;
+  padding: 20px;
+  align-items: flex-start;
+}
 
-    /* layout de la page projet */
-    .projectpage {
-      display: flex;
-      gap: 24px;
-      padding: 20px;
-      align-items: flex-start;
-    }
+.projectpage .photos {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.projectpage .photos img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  display: block;
+}
 
-    .projectpage .photos {
-      flex: 2;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-    .projectpage .photos img {
-      width: 100%;
-      height: auto;
-      border-radius: 6px;
-      display: block;
-    }
+.projectpage .description {
+  flex: 1;
+  position: relative; /* nécessaire pour sticky */
+  padding: 0 30px;
+}
 
-    .projectpage .description {
-      flex: 1;
-      position: relative; /* nécessaire pour sticky */
-      padding: 0 30px;
-    }
+.sticky {
+  position: sticky;
+  top: 20px;
+}
 
-    .sticky {
-      position: sticky;
-      top: 20px; /* distance du haut de la fenêtre */
-    }
+.suivant, .precedent {
+  display: inline-block;
+  text-decoration: none;
+  color: #000;
+  border: 1px solid #ddd;
+  padding: 8px 12px;
+  border-radius: 6px;
+  margin-top: 12px;
+}
 
-    .suivant, .precedent {
-      display: inline-block;
-      text-decoration: none;
-      color: #000;
-      border: 1px solid #ddd;
-      padding: 8px 12px;
-      border-radius: 6px;
-      margin-top: 12px;
-    }
+/* responsive */
+@media (max-width: 700px) {
+  .projectpage { flex-direction: column; }
+  .projectpage .description { 
+    position: static; 
+    width: 100%; 
+    margin-top: 20px; 
+    padding: 0; 
+  }
+}
 
-    /* responsive */
-    @media (max-width: 700px) {
-      .projectpage { flex-direction: column; }
-      .projectpage .description { position: static; width: 100%; margin-top: 20px; padding: 0; }
-    }
 .full-width {
-  grid-column: span 2; /* l'image prend toute la ligne */
-
+  grid-column: span 2;
 }
 
 a.brand,
@@ -114,9 +106,3 @@ a.brand:active {
   text-decoration: none !important;
   color: #000000 !important;
 }
-
-
-  </style>
-
-
-
