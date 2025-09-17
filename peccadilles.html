@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <link rel="shortcut icon" type="image/png" href="photo/logo_2.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salomé Jollit</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #fff;
+      color: #000;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid #eee;
+    }
+
+    .brand {
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    header nav a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+    }
+
+    /* Mise en page deux colonnes */
+    .projectpage {
+      display: flex;
+      padding: 20px;
+    }
+
+    /* Colonne gauche (photos en grille) */
+    .photos {
+      flex: 1;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
+      gap: 12px;
+      margin-right: 35%; /* laisse la place pour la colonne fixe */
+    }
+
+    .photos img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+      display: block;
+    }
+
+    /* Image du milieu qui prend toute la largeur */
+    .photos .full-width {
+      grid-column: 1 / -1; /* prend les 2 colonnes */
+    }
+
+    /* Colonne droite (texte fixe) */
+    .description {
+      position: fixed;
+      right: 30px;
+      top: 50px;
+      width: 30%;
+      background: #fff;
+    }
+
+    .suivant, .precedent {
+      display: inline-block;
+      margin-top: 12px;
+      margin-right: 8px;
+      text-decoration: none;
+      color: inherit;
+      border: 1px solid #ddd;
+      padding: 8px 12px;
+      border-radius: 6px;
+    }
+
+    /* Responsive */
+    @media (max-width: 700px) {
+      .projectpage {
+        flex-direction: column;
+      }
+      .photos {
+        grid-template-columns: 1fr; /* une seule colonne sur mobile */
+        margin-right: 0;
+      }
+      .description {
+        position: static;
+        width: 100%;
+        margin-top: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html" class="brand">Salomé Jollit</a>
+    <nav>
+      <a href="index.html">Work</a>
+      <a href="cv.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="projectpage">
+    <!-- Colonne gauche -->
+    <div class="photos">
+      <img src="photo/portrait.png" alt="img" loading="lazy">
+      <img src="photo/test axes2.jpg" alt="img" loading="lazy">
+
+      <!-- image qui prend toute la largeur -->
+      <img src="photo/43.png" alt="img" class="full-width" loading="lazy">
+
+      <img src="photo/test axes3.jpg" alt="img" loading="lazy">
+      <img src="photo/test axes4.jpg" alt="img" loading="lazy">
+    </div>
+
+    <!-- Colonne droite -->
+    <aside class="description">
+      <p><strong>PECCADILLES</strong><br><br>
+        Peccadilles is reinventing snacking by making insect-based foods
+more accessible.
+To embody this mainstream approach, I designed striking
+packaging, repurposing the famous “Keep calm and eat
+Peccadilles” slogan to capture attention and normalize
+entomophagy. The symbols highlight the flavors and presence
+of insects through clear and playful iconography, transforming
+curiosity into a culinary and gourmet experience.
+      </p>
+      <a class="suivant" href="podcast.html">Next</a>
+      <a class="precedent" href="index.html">Home</a>
+    </aside>
+  </main>
+</body>
+</html>
