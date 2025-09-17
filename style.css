@@ -25,16 +25,24 @@
       border-bottom: 2px solid #ddd;
     }
 
-    /* lien "Salomé Jollit" */
-    .brand {
-      text-decoration: none;
-      color: #000;              /* couleur de base */
-      font-weight: 800;
-      font-size: 1.2rem;
-      transition: color 0.25s ease;
-    }
-    .brand:hover { color: #f7dbeb; }   /* couleur au survol */
-    .brand:active { color: #f6b6d9; }  /* couleur au clic */
+   .brand {
+  text-decoration: none !important; /* force l'absence de soulignement */
+  color: #000;
+  font-weight: 800;
+  font-size: 1.2rem;
+  transition: color 0.25s ease;
+}
+
+.brand:hover {
+  text-decoration: none !important; /* empêche le soulignement au hover */
+  color: #f7dbeb;
+}
+
+.brand:active {
+  text-decoration: none !important; /* empêche le soulignement au clic */
+  color: #f6b6d9;
+}
+
 
     /* nav */
     .nav a {
@@ -98,37 +106,3 @@
 }
 
   </style>
-</head>
-<body>
-  <header class="tete">
-    <!-- Lien cliquable, sans soulignement, couleur change au hover/active -->
-    <a href="index.html" class="brand">Salomé Jollit</a>
-
-    <nav class="nav">
-      <a href="index.html">Work</a>
-      <a href="cv.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
-
-  <main class="projectpage">
-    <div class="photos">
-      <img src="photo/3b_web.jpg" alt="img">
-      <img src="photo/piano_web.jpg" alt="img">
-      <img src="photo/track_web.jpg" alt="img">
-      <img src="photo/animalson_web.jpg" alt="img">
-    </div>
-
-    <aside class="description">
-      <div class="sticky">
-        <p><strong>BEATMAKERS</strong><br><br>
-        Design of an editorial collection concept consisting of showcasing the work of BeatMakers through Arte radio podcasts...
-        </p>
-        <a class="suivant" href="chocolat.html">Next</a>
-        <a class="precedent" href="index.html">Home</a>
-      </div>
-    </aside>
-  </main>
-</body>
-</html>
-
