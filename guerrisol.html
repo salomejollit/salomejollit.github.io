@@ -21,16 +21,11 @@
       border-bottom: 1px solid #eee;
     }
 
-    /* Lien du logo/nom */
     .brand {
-      text-decoration: none; /* enlève le soulignement */
-      color: #000; /* noir */
+      text-decoration: none;
+      color: #000;
       font-weight: bold;
       font-size: 1.2rem;
-    }
-
-    .brand:hover {
-      text-decoration: underline; /* optionnel : souligné au survol */
     }
 
     header nav a {
@@ -46,11 +41,11 @@
       padding: 20px;
     }
 
-    /* Colonne gauche (photos) */
+    /* Colonne gauche (photos en grille) */
     .photos {
       flex: 1;
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
       gap: 12px;
       margin-right: 35%; /* laisse la place pour la colonne fixe */
     }
@@ -62,11 +57,16 @@
       display: block;
     }
 
+    /* Image du milieu qui prend toute la largeur */
+    .photos .full-width {
+      grid-column: 1 / -1; /* prend les 2 colonnes */
+    }
+
     /* Colonne droite (texte fixe) */
     .description {
       position: fixed;
       right: 30px;
-      top: 50px; /* <-- corrigé ici */
+      top: 50px;
       width: 30%;
       background: #fff;
     }
@@ -88,6 +88,7 @@
         flex-direction: column;
       }
       .photos {
+        grid-template-columns: 1fr; /* une seule colonne sur mobile */
         margin-right: 0;
       }
       .description {
@@ -100,9 +101,7 @@
 </head>
 <body>
   <header>
-    <!-- Salomé Jollit cliquable -->
     <a href="index.html" class="brand">Salomé Jollit</a>
-    
     <nav>
       <a href="index.html">Work</a>
       <a href="cv.html">About</a>
@@ -112,36 +111,27 @@
 
   <main class="projectpage">
     <!-- Colonne gauche -->
-   <div class="photos">
-  <img src="photo/portrait.png" alt="img" loading="lazy">
-  <img src="photo/test axes2.jpg" alt="img" loading="lazy">
+    <div class="photos">
+      <img src="photo/portrait.png" alt="img" loading="lazy">
+      <img src="photo/test axes2.jpg" alt="img" loading="lazy">
 
-  <!-- image qui prend toute la largeur -->
-  <img src="photo/43.png" alt="img" class="full-width" loading="lazy">
+      <!-- image qui prend toute la largeur -->
+      <img src="photo/43.png" alt="img" class="full-width" loading="lazy">
 
-  <img src="photo/test axes3.jpg" alt="img" loading="lazy">
-  <img src="photo/test axes4.jpg" alt="img" loading="lazy">
-</div>
+      <img src="photo/test axes3.jpg" alt="img" loading="lazy">
+      <img src="photo/test axes4.jpg" alt="img" loading="lazy">
+    </div>
 
     <!-- Colonne droite -->
     <aside class="description">
       <p><strong>GUERRISOL</strong><br><br>
-With its expansion into new cities, the Guerrisol brand is reinventing
-its image and establishing itself as a true stylistic playground for all
-generations.
-The campaign captures the magical moment of finding the perfect
-item, that raw emotion where surprise and excitement mingle. Eyes
-that light up, a smile that bursts forth: that’s the Guerrisol experience.
-Through hyperbolic and expressive portraits, it highlights that unique
-feeling every bargain hunter experiences when they find THE item
-that’s just right for them. The textured visuals remind us that fashion
-is a cycle that transcends time.      </p>
+        With its expansion into new cities, the Guerrisol brand is reinventing
+        its image and establishing itself as a true stylistic playground for all
+        generations. [...]
+      </p>
       <a class="suivant" href="podcast.html">Next</a>
       <a class="precedent" href="index.html">Home</a>
     </aside>
   </main>
 </body>
 </html>
-
-
-
