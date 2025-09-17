@@ -21,16 +21,19 @@
       border-bottom: 1px solid #eee;
     }
 
-    /* Lien du logo/nom */
-    .brand {
-      text-decoration: none; /* enlève le soulignement */
-      color: #000; /* noir */
+    /* Groupe logo + texte */
+    .logo {
+      display: flex;
+      align-items: center;  /* aligne verticalement */
+      gap: 8px;             /* espace entre texte et logo */
       font-weight: bold;
       font-size: 1.2rem;
     }
 
-    .brand:hover {
-      text-decoration: underline; /* optionnel : souligné au survol */
+    .logo img {
+      height: 28px;  /* ajuste la taille du logo */
+      width: auto;
+      display: block;
     }
 
     header nav a {
@@ -66,7 +69,7 @@
     .description {
       position: fixed;
       right: 30px;
-      top: 50px; /* <-- corrigé ici */
+      top: 80px; /* espace pour ne pas coller au header */
       width: 30%;
       background: #fff;
     }
@@ -115,18 +118,17 @@
   <main class="projectpage">
     <!-- Colonne gauche -->
     <div class="photos">
-      <img class="img" src="photo/affichejpo_web.jpg" alt="img" >
-      <img class="img" src="photo/JAUNE_web.jpg" alt="img" >
+      <img class="img" src="photo/affichejpo_web.jpg" alt="img">
+      <img class="img" src="photo/JAUNE_web.jpg" alt="img">
       <img class="img" src="photo/BLANCHE MAIN_web.jpg" alt="img">
-
     </div>
 
     <!-- Colonne droite -->
     <aside class="description">
       <p><strong>SCHOOL OPEN DAY POSTERS</strong><br><br>
-Design of the poster for the Open House at the ELMAD Auguste Renoir School of Art and Design.
-The concept was to highlight the title “JPO 2024.”
-To do this, I chose to orient the title vertically, using a marker to highlight the school's unique features.
+      Design of the poster for the Open House at the ELMAD Auguste Renoir School of Art and Design.
+      The concept was to highlight the title “JPO 2024.”
+      To do this, I chose to orient the title vertically, using a marker to highlight the school's unique features.
       </p>
       <a class="suivant" href="urgence.html">Next</a>
       <a class="precedent" href="index.html">Home</a>
@@ -134,5 +136,3 @@ To do this, I chose to orient the title vertically, using a marker to highlight 
   </main>
 </body>
 </html>
-
-
