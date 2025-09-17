@@ -27,7 +27,7 @@
 
    .brand {
   text-decoration: none !important; /* force l'absence de soulignement */
-  color: #000;
+  color: #000000;
   font-weight: 800;
   font-size: 1.2rem;
   transition: color 0.25s ease;
@@ -35,12 +35,12 @@
 
 .brand:hover {
   text-decoration: none !important; /* empêche le soulignement au hover */
-  color: #f7dbeb;
+  color: #000000;
 }
 
 .brand:active {
   text-decoration: none !important; /* empêche le soulignement au clic */
-  color: #f6b6d9;
+  color: #000000;
 }
 
 
@@ -117,4 +117,5 @@ a.brand:active {
 
 
   </style>
+
 
