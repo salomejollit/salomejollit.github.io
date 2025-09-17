@@ -118,4 +118,17 @@ a.brand:active {
 }
 
 }
+/* Force pour TOUS les liens */
+a {
+  text-decoration: none !important;
+  color: #000 !important;
+}
+
+/* Et si tu veux que ça ne s’applique qu’au titre */
+.tete .brand {
+  text-decoration: none !important;
+  color: #000 !important;
+}
+
+
 
