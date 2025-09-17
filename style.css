@@ -103,6 +103,18 @@
     }
 .full-width {
   grid-column: span 2; /* l'image prend toute la ligne */
+
 }
 
+a.brand,
+a.brand:link,
+a.brand:visited,
+a.brand:hover,
+a.brand:active {
+  text-decoration: none !important;
+  color: #000 !important;
+}
+
+
   </style>
+
