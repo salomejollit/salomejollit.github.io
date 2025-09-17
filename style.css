@@ -105,4 +105,17 @@ a.brand:hover,
 a.brand:active {
   text-decoration: none !important;
   color: #000000 !important;
+
+  .tete .brand,
+.tete .brand:link,
+.tete .brand:visited,
+.tete .brand:hover,
+.tete .brand:active {
+  text-decoration: none !important;
+  color: #000 !important;
+  border: none !important;
+  outline: none !important;
 }
+
+}
+
