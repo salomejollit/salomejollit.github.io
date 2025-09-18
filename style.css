@@ -141,3 +141,12 @@ header .logo a:active {
   width: auto;
   display: block;
 }
+
+header {
+  position: sticky;   /* colle quand on scrolle */
+  top: 0;             /* colle au bord haut */
+  background: #fff;   /* fond blanc (facultatif mais souvent utile) */
+  z-index: 10;        /* reste au-dessus si besoin */
+}
+
+
