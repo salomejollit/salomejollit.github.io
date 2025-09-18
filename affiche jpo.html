@@ -51,11 +51,11 @@
       padding: 20px;
     }
 
-    /* Colonne gauche (photos en grille) */
+    /* Colonne gauche (photos en colonne simple) */
     .photos {
       flex: 1;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
+      display: flex;
+      flex-direction: column; /* aligne les images en colonne */
       gap: 12px;
       margin-right: 35%; /* laisse la place pour la colonne fixe */
     }
@@ -65,11 +65,6 @@
       height: auto;
       border-radius: 6px;
       display: block;
-    }
-
-    /* Image du milieu qui prend toute la largeur */
-    .photos .full-width {
-      grid-column: 1 / -1; /* prend les 2 colonnes */
     }
 
     /* Colonne droite (texte fixe) */
@@ -98,7 +93,6 @@
         flex-direction: column;
       }
       .photos {
-        grid-template-columns: 1fr; /* une seule colonne sur mobile */
         margin-right: 0;
       }
       .description {
@@ -136,7 +130,7 @@
     <aside class="description">
       <p><strong>SCHOOL OPEN DAY POSTERS</strong><br><br>
         Design of the poster for the Open House at the ELMAD Auguste Renoir School of Art and Design.
-      The concept was to highlight the title “JPO 2024.”
+      The concept was to highlight the title “JPO 2024.”  
       To do this, I chose to orient the title vertically, using a marker to highlight the school's unique features
       </p>
       <a class="suivant" href="urgence.html">Next</a>
