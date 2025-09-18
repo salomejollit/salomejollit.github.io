@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <link rel="shortcut icon" type="image/png" href="photo/logo_2.png">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Salomé Jollit</title>
+  <link rel="shortcut icon" type="image/png" href="photo/logo_2.png">
   <style>
+    * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: sans-serif;
@@ -21,7 +22,6 @@
       border-bottom: 1px solid #eee;
     }
 
-    /* Lien "Salomé Jollit" */
     .brand {
       text-decoration: none;
       color: #000;
@@ -31,121 +31,90 @@
       align-items: center;
       gap: 8px;
     }
+    .brand img { height: 28px; width: auto; display:block; }
 
-    .brand img {
-      height: 28px;
-      width: auto;
-      display: block;
-    }
+    nav a { margin-left: 1.5rem; text-decoration: none; color: #000; font-weight: bold; }
 
-    header nav a {
-      margin-left: 1.5rem;
-      text-decoration: none;
-      color: #000;
-      font-weight: bold;
-    }
-
-    /* Mise en page deux colonnes */
+    /* Grid principal : contenu (images) | colonne description */
     .projectpage {
-      display: flex;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 30%;
+      gap: 24px;
       padding: 20px;
+      align-items: start;
     }
 
-    /* Colonne gauche (photos en colonne simple) */
-    .photos {
-      flex: 1;
-      display: flex;
-      flex-direction: column; /* aligne les images en colonne */
-      gap: 12px;
-      margin-right: 35%; /* laisse la place pour la colonne fixe */
-    }
-
-    .photos img {
+    /* Images petites (colonne de gauche) */
+    .projectpage img {
       width: 100%;
       height: auto;
-      border-radius: 6px;
       display: block;
+      border-radius: 6px;
     }
 
-    /* Images plein format (qui cassent la mise en page en largeur totale) */
-    .photos .full-width {
-      width: 100vw; /* largeur totale de la fenêtre */
-      margin-left: calc(-20px - 0.5 * (100vw - 100%)); /* corrige l'alignement */
-      border-radius: 0; /* supprime les arrondis */
+    /* Images plein format : elles s'étendent sur les 2 colonnes du grid */
+    .full-width {
+      grid-column: 1 / -1; /* span across both columns */
+      width: 100%;
+      border-radius: 0;
+      margin: 0; /* remove gaps on edges */
     }
 
-    /* Colonne droite (texte fixe) */
+    /* Colonne description : sticky pour rester visible sans chevauchement */
     .description {
-      position: fixed;
-      right: 30px;
-      top: 50px;
-      width: 30%;
+      grid-column: 2;            /* place in second column */
+      align-self: start;
+      position: sticky;
+      top: 80px;                 /* ajuste si ton header change de hauteur */
+      padding-left: 8px;
       background: #fff;
     }
 
     .suivant, .precedent {
       display: inline-block;
-      margin-top: 12px;
-      margin-right: 8px;
       text-decoration: none;
-      color: inherit;
+      color: #000;
       border: 1px solid #ddd;
       padding: 8px 12px;
       border-radius: 6px;
+      margin-top: 12px;
+      margin-right: 8px;
     }
 
-    /* Responsive */
+    /* Responsive : colonne unique */
     @media (max-width: 700px) {
       .projectpage {
-        flex-direction: column;
-      }
-      .photos {
-        margin-right: 0;
-      }
-      .photos .full-width {
-        margin-left: 0;
-        width: 100%;
+        grid-template-columns: 1fr;
       }
       .description {
         position: static;
-        width: 100%;
-        margin-top: 20px;
+        grid-column: 1;
+        margin-top: 18px;
+        top: auto;
+        padding-left: 0;
       }
+      .full-width { grid-column: 1 / -1; width: 100%; margin: 0; }
     }
   </style>
 </head>
-
 <body>
   <header>
-    <!-- Texte + logo cliquables ensemble -->
     <a href="index.html" class="brand">
       Salomé Jollit
       <img src="photo/logo.svg" alt="Logo">
     </a>
 
-    <nav class="nav">
+    <nav>
       <a href="index.html">Work</a>
       <a href="cv.html">About</a>
       <a href="contact.html">Contact</a>
     </nav>
   </header>
 
-
   <main class="projectpage">
-    <!-- Colonne gauche -->
-    <div class="photos">
-      <img src="photo/03_PECCADILLES.png" alt="img" loading="lazy">
-      <img src="photo/05_PECCADILLES.png" alt="img" loading="lazy">
-
-      <!-- Plein format -->
-      <img src="photo/02_PECCADILLES.png" alt="img" class="full-width" loading="lazy">
-      <img src="photo/08_PECCADILLES_Plan de travail 1-02.jpg" alt="img" class="full-width" loading="lazy">
-
-      <img src="photo/07_PECCADILLES.png" alt="img" loading="lazy">
-      <img src="photo/06_PECCADILLES.png" alt="img" loading="lazy">
-    </div>
-
-    <!-- Colonne droite -->
+    <!-- petites images en colonne de gauche (sont des enfants du grid) -->
+    <img src="photo/03_PECCADILLES.png" alt="img" loading="lazy">
+    <!-- la colonne de droite (description) est ajoutée ici mais placée dans la 2e colonne via CSS -->
     <aside class="description">
       <p><strong>PECCADILLES</strong><br>
         <span style="color:#f5b1d0;">[packaging] [2025]</span>
@@ -162,6 +131,15 @@
       <a class="suivant" href="barthes.html">Next</a>
       <a class="precedent" href="index.html">Home</a>
     </aside>
+
+    <img src="photo/05_PECCADILLES.png" alt="img" loading="lazy">
+
+    <!-- images plein format qui prennent la largeur entière (ne dépassent pas la description) -->
+    <img src="photo/02_PECCADILLES.png" alt="img" class="full-width" loading="lazy">
+    <img src="photo/08_PECCADILLES_Plan de travail 1-02.jpg" alt="img" class="full-width" loading="lazy">
+
+    <img src="photo/07_PECCADILLES.png" alt="img" loading="lazy">
+    <img src="photo/06_PECCADILLES.png" alt="img" loading="lazy">
   </main>
 </body>
 </html>
