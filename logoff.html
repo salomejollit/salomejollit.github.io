@@ -21,16 +21,21 @@
       border-bottom: 1px solid #eee;
     }
 
-    /* Lien du logo/nom */
+    /* Lien "Salomé Jollit" */
     .brand {
-      text-decoration: none; /* enlève le soulignement */
-      color: #000; /* noir */
+      text-decoration: none;
+      color: #000;
       font-weight: bold;
       font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
 
-    .brand:hover {
-      text-decoration: underline; /* optionnel : souligné au survol */
+    .brand img {
+      height: 28px;
+      width: auto;
+      display: block;
     }
 
     header nav a {
@@ -46,11 +51,11 @@
       padding: 20px;
     }
 
-    /* Colonne gauche (photos) */
+    /* Colonne gauche (photos en colonne simple) */
     .photos {
       flex: 1;
       display: flex;
-      flex-direction: column;
+      flex-direction: column; /* aligne les images en colonne */
       gap: 12px;
       margin-right: 35%; /* laisse la place pour la colonne fixe */
     }
@@ -66,7 +71,7 @@
     .description {
       position: fixed;
       right: 30px;
-      top: 50px; /* <-- corrigé ici */
+      top: 50px;
       width: 30%;
       background: #fff;
     }
@@ -100,10 +105,13 @@
 </head>
 <body>
   <header>
-    <!-- Salomé Jollit cliquable -->
-    <a href="index.html" class="brand">Salomé Jollit</a>
-    
-    <nav>
+    <!-- Texte + logo cliquables ensemble -->
+    <a href="index.html" class="brand">
+      Salomé Jollit
+      <img src="photo/logo.svg" alt="Logo">
+    </a>
+
+    <nav class="nav">
       <a href="index.html">Work</a>
       <a href="cv.html">About</a>
       <a href="contact.html">Contact</a>
@@ -113,7 +121,7 @@
   <main class="projectpage">
     <!-- Colonne gauche -->
     <div class="photos">
-     <img class="img" src="photo/logoff_web.jpg" alt="img" >
+      <img class="img" src="photo/logoff_web.jpg" alt="img" >
       <img class="img" src="photo/logoff2_web.jpg" alt="img">
       <img class="img" src="photo/mockup6_web.jpg" alt="img">
       <img class="img" src="photo/logofflivret_web.jpg" alt="img">
@@ -121,16 +129,19 @@
 
     <!-- Colonne droite -->
     <aside class="description">
-      <p><strong>LOGOFF</strong><br><br>
-LOGOFF is a movement aimed at raising awareness about
+      <p><strong>LOGOFF</strong><br>
+        <span style="color:#f5b1d0;">[advertising campaign] [2023]</span>
+        <br><br>
+        LOGOFF is a movement aimed at raising awareness about
 disconnecting, aimed at high school students.
 To speak to a hyper-connected generation, I adopted social
 media codes by using cat memes, symbols of freedom,
 independence, and humor. The metaphor of the cat that always
 lands on its feet illustrates the idea that we can easily do without
 social media without feeling lost. These contributions resulted in
-a publication designed as a printed feed.      </p>
-      <a class="suivant" href="bnf.html">Next</a>
+a publication designed as a printed feed. 
+      </p>
+      <a class="suivant" href="urgence.html">Next</a>
       <a class="precedent" href="index.html">Home</a>
     </aside>
   </main>
