@@ -21,16 +21,21 @@
       border-bottom: 1px solid #eee;
     }
 
-    /* Lien du logo/nom */
+    /* Lien "Salomé Jollit" */
     .brand {
-      text-decoration: none; /* enlève le soulignement */
-      color: #000; /* noir */
+      text-decoration: none;
+      color: #000;
       font-weight: bold;
       font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
 
-    .brand:hover {
-      text-decoration: underline; /* optionnel : souligné au survol */
+    .brand img {
+      height: 28px;
+      width: auto;
+      display: block;
     }
 
     header nav a {
@@ -46,11 +51,11 @@
       padding: 20px;
     }
 
-    /* Colonne gauche (photos) */
+    /* Colonne gauche (photos en grille) */
     .photos {
       flex: 1;
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
       gap: 12px;
       margin-right: 35%; /* laisse la place pour la colonne fixe */
     }
@@ -62,11 +67,16 @@
       display: block;
     }
 
+    /* Image du milieu qui prend toute la largeur */
+    .photos .full-width {
+      grid-column: 1 / -1; /* prend les 2 colonnes */
+    }
+
     /* Colonne droite (texte fixe) */
     .description {
       position: fixed;
       right: 30px;
-      top: 50px; /* <-- corrigé ici */
+      top: 50px;
       width: 30%;
       background: #fff;
     }
@@ -88,6 +98,7 @@
         flex-direction: column;
       }
       .photos {
+        grid-template-columns: 1fr; /* une seule colonne sur mobile */
         margin-right: 0;
       }
       .description {
@@ -100,10 +111,13 @@
 </head>
 <body>
   <header>
-    <!-- Salomé Jollit cliquable -->
-    <a href="index.html" class="brand">Salomé Jollit</a>
-    
-    <nav>
+    <!-- Texte + logo cliquables ensemble -->
+    <a href="index.html" class="brand">
+      Salomé Jollit
+      <img src="photo/logo.svg" alt="Logo">
+    </a>
+
+    <nav class="nav">
       <a href="index.html">Work</a>
       <a href="cv.html">About</a>
       <a href="contact.html">Contact</a>
@@ -113,6 +127,7 @@
   <main class="projectpage">
     <!-- Colonne gauche -->
     <div class="photos">
+     <div class="photos">
       <img src="photo/3b_web.jpg" alt="img">
       <img src="photo/piano_web.jpg" alt="img">
       <img src="photo/track_web.jpg" alt="img">
@@ -121,10 +136,12 @@
 
     <!-- Colonne droite -->
     <aside class="description">
-      <p><strong>BEATMAKERS</strong><br><br>
+      <p><strong>BEATMAKERS</strong><br>
+         <span style="color:#f5b1d0;">[edition] [2023]</span>
+        <br><br>
         Design of an editorial collection concept consisting of showcasing the work of BeatMakers through Arte radio podcasts. Their signature instrument is embedded in their initials on the front and back covers, where soundtracks are featured, reflecting the rhythm and sequencing of sound.
       </p>
-      <a class="suivant" href="chocolat.html">Next</a>
+      <a class="suivant" href="roger.html">Next</a>
       <a class="precedent" href="index.html">Home</a>
     </aside>
   </main>
