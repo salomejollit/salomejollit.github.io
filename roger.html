@@ -21,16 +21,21 @@
       border-bottom: 1px solid #eee;
     }
 
-    /* Lien du logo/nom */
+    /* Lien "Salomé Jollit" */
     .brand {
-      text-decoration: none; /* enlève le soulignement */
-      color: #000; /* noir */
+      text-decoration: none;
+      color: #000;
       font-weight: bold;
       font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
 
-    .brand:hover {
-      text-decoration: underline; /* optionnel : souligné au survol */
+    .brand img {
+      height: 28px;
+      width: auto;
+      display: block;
     }
 
     header nav a {
@@ -46,11 +51,11 @@
       padding: 20px;
     }
 
-    /* Colonne gauche (photos) */
+    /* Colonne gauche (photos en colonne simple) */
     .photos {
       flex: 1;
       display: flex;
-      flex-direction: column;
+      flex-direction: column; /* aligne les images en colonne */
       gap: 12px;
       margin-right: 35%; /* laisse la place pour la colonne fixe */
     }
@@ -66,7 +71,7 @@
     .description {
       position: fixed;
       right: 30px;
-      top: 50px; /* <-- corrigé ici */
+      top: 50px;
       width: 30%;
       background: #fff;
     }
@@ -100,10 +105,13 @@
 </head>
 <body>
   <header>
-    <!-- Salomé Jollit cliquable -->
-    <a href="index.html" class="brand">Salomé Jollit</a>
-    
-    <nav>
+    <!-- Texte + logo cliquables ensemble -->
+    <a href="index.html" class="brand">
+      Salomé Jollit
+      <img src="photo/logo.svg" alt="Logo">
+    </a>
+
+    <nav class="nav">
       <a href="index.html">Work</a>
       <a href="cv.html">About</a>
       <a href="contact.html">Contact</a>
@@ -113,18 +121,21 @@
   <main class="projectpage">
     <!-- Colonne gauche -->
     <div class="photos">
-     <img class="img" src="photo/02_ROGER-2.png" alt="img" >
+      <img class="img" src="photo/02_ROGER-2.png" alt="img" >
       <img class="img" src="photo/01_ROGER-2.png" alt="img">
     </div>
 
     <!-- Colonne droite -->
     <aside class="description">
-      <p><strong>ROGER</strong><br><br>
-Development of a typeface based on a vintage logo, available in three weights
+      <p><strong>ROGER FONT</strong><br>
+        <span style="color:#f5b1d0;">[typography] [2024]</span>
+        <br><br>
+        Development of a typeface based on a vintage logo, available in three weights
 and applied in a type specimen.
 This project was an opportunity to explore character design and discover the
-Glyphs software.      </p>
-      <a class="suivant" href="affiche jpo.html">Next</a>
+Glyphs software.
+      </p>
+      <a class="suivant" href="urgence.html">Next</a>
       <a class="precedent" href="index.html">Home</a>
     </aside>
   </main>
