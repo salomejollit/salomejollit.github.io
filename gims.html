@@ -21,15 +21,21 @@
       border-bottom: 1px solid #eee;
     }
 
+    /* Lien "Salomé Jollit" */
     .brand {
       text-decoration: none;
       color: #000;
       font-weight: bold;
       font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
 
-    .brand:hover {
-      text-decoration: underline;
+    .brand img {
+      height: 28px;
+      width: auto;
+      display: block;
     }
 
     header nav a {
@@ -49,9 +55,9 @@
     .photos {
       flex: 1;
       display: grid;
-      grid-template-columns: repeat(2, 1fr); /* 2 images par ligne */
+      grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
       gap: 12px;
-      margin-right: 35%;
+      margin-right: 35%; /* laisse la place pour la colonne fixe */
     }
 
     .photos img {
@@ -59,7 +65,11 @@
       height: auto;
       border-radius: 6px;
       display: block;
-      object-fit: cover;
+    }
+
+    /* Image du milieu qui prend toute la largeur */
+    .photos .full-width {
+      grid-column: 1 / -1; /* prend les 2 colonnes */
     }
 
     /* Colonne droite (texte fixe) */
@@ -83,9 +93,12 @@
     }
 
     /* Responsive */
-    @media (max-width: 900px) {
+    @media (max-width: 700px) {
+      .projectpage {
+        flex-direction: column;
+      }
       .photos {
-        grid-template-columns: 1fr; /* 1 image par ligne sur petits écrans */
+        grid-template-columns: 1fr; /* une seule colonne sur mobile */
         margin-right: 0;
       }
       .description {
@@ -98,8 +111,13 @@
 </head>
 <body>
   <header>
-    <a href="index.html" class="brand">Salomé Jollit</a>
-    <nav>
+    <!-- Texte + logo cliquables ensemble -->
+    <a href="index.html" class="brand">
+      Salomé Jollit
+      <img src="photo/logo.svg" alt="Logo">
+    </a>
+
+    <nav class="nav">
       <a href="index.html">Work</a>
       <a href="cv.html">About</a>
       <a href="contact.html">Contact</a>
@@ -108,24 +126,22 @@
 
   <main class="projectpage">
     <!-- Colonne gauche -->
-   <div class="photos">
-  <img src="GIMS_Ecouteurs_Tshirt_Album.png" alt="img" loading="lazy">
-  <img src="GIMS_DISCOGRAPHY_Tshirt_Blanc.png" alt="img" loading="lazy">
-
-  <!-- image qui prend toute la largeur -->
-  <img src="Capture d'écran 2025-04-07 150238.png" alt="img" class="full-width" loading="lazy">
-
-  <img src="GIMS_Tshit_Blanc_2.png" alt="img" loading="lazy">
-  <img src="06_GIMS_Lunettes_Noir_2.png" alt="img" loading="lazy">
-  <img src="GIMS_G_OR_MAINS_Tshirt.png" alt="img" loading="lazy">
-  <img src="GIMS_Vintage_Orange_Noir_Tshirt.png" alt="img" loading="lazy">
-  <img src="GIMS_LineUp_Tshirt_Blanc.png" alt="img" loading="lazy">
-</div>
-
+    <div class="photos">
+      <img src="GIMS_Ecouteurs_Tshirt_Album.png" alt="img" loading="lazy">
+      <img src="GIMS_DISCOGRAPHY_Tshirt_Blanc.png" alt="img" loading="lazy">
+      <img src="Capture d'écran 2025-04-07 150238.png" alt="img" class="full-width" loading="lazy">
+      <img src="GIMS_Tshit_Blanc_2.png" alt="img" loading="lazy">
+      <img src="06_GIMS_Lunettes_Noir_2.png" alt="img" loading="lazy">
+      <img src="GIMS_G_OR_MAINS_Tshirt.png" alt="img" class="full-width" loading="lazy">
+      <img src="GIMS_Vintage_Orange_Noir_Tshirt.png" alt="img" loading="lazy">
+      <img src="GIMS_LineUp_Tshirt_Blanc.png" alt="img" loading="lazy">
+    </div>
 
     <!-- Colonne droite -->
     <aside class="description">
-      <p><strong>GIMS MERCHANDISING X OFFSTAGE</strong><br><br>
+      <p><strong>GIMS MERCHANDISING X OFFSTAGE</strong><br>
+         <span style="color:#f5b1d0;">[merchandising] [2024]</span>
+        <br><br>
         Creation of a merchandising collection for summer 2024, aligned with Gims’
         visual universe and current trends.
         By analyzing his target audience and fashion influences, I was able to
@@ -134,7 +150,7 @@
         with a cross-generational audience.<br><br>
         This collaboration is a fictional collection between the artist Gims and the Offstage website.
       </p>
-      <a class="suivant" href="guerrisol.html">Next</a>
+      <a class="suivant" href="roger.html">Next</a>
       <a class="precedent" href="index.html">Home</a>
     </aside>
   </main>
