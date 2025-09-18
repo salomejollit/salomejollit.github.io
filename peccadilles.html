@@ -21,11 +21,21 @@
       border-bottom: 1px solid #eee;
     }
 
+    /* Lien "Salomé Jollit" */
     .brand {
       text-decoration: none;
       color: #000;
       font-weight: bold;
       font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .brand img {
+      height: 28px;
+      width: auto;
+      display: block;
     }
 
     header nav a {
@@ -41,11 +51,11 @@
       padding: 20px;
     }
 
-    /* Colonne gauche (photos en grille) */
+    /* Colonne gauche (photos en colonne simple) */
     .photos {
       flex: 1;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
+      display: flex;
+      flex-direction: column; /* aligne les images en colonne */
       gap: 12px;
       margin-right: 35%; /* laisse la place pour la colonne fixe */
     }
@@ -55,11 +65,6 @@
       height: auto;
       border-radius: 6px;
       display: block;
-    }
-
-    /* Image du milieu qui prend toute la largeur */
-    .photos .full-width {
-      grid-column: 1 / -1; /* prend les 2 colonnes */
     }
 
     /* Colonne droite (texte fixe) */
@@ -88,7 +93,6 @@
         flex-direction: column;
       }
       .photos {
-        grid-template-columns: 1fr; /* une seule colonne sur mobile */
         margin-right: 0;
       }
       .description {
@@ -99,15 +103,22 @@
     }
   </style>
 </head>
+
 <body>
   <header>
-    <a href="index.html" class="brand">Salomé Jollit</a>
-    <nav>
+    <!-- Texte + logo cliquables ensemble -->
+    <a href="index.html" class="brand">
+      Salomé Jollit
+      <img src="photo/logo.svg" alt="Logo">
+    </a>
+
+    <nav class="nav">
       <a href="index.html">Work</a>
       <a href="cv.html">About</a>
       <a href="contact.html">Contact</a>
     </nav>
   </header>
+
 
   <main class="projectpage">
     <!-- Colonne gauche -->
@@ -123,7 +134,9 @@
 
     <!-- Colonne droite -->
     <aside class="description">
-      <p><strong>PECCADILLES</strong><br><br>
+      <p><strong>PECCADILLES</strong><br>
+        <span style="color:#f5b1d0;">[packaging] [2025]</span>
+        <br><br>
         Peccadilles is reinventing snacking by making insect-based foods
 more accessible.
 To embody this mainstream approach, I designed striking
