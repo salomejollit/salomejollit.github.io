@@ -67,6 +67,13 @@
       display: block;
     }
 
+    /* Images plein format (qui cassent la mise en page en largeur totale) */
+    .photos .full-width {
+      width: 100vw; /* largeur totale de la fenêtre */
+      margin-left: calc(-20px - 0.5 * (100vw - 100%)); /* corrige l'alignement */
+      border-radius: 0; /* supprime les arrondis */
+    }
+
     /* Colonne droite (texte fixe) */
     .description {
       position: fixed;
@@ -94,6 +101,10 @@
       }
       .photos {
         margin-right: 0;
+      }
+      .photos .full-width {
+        margin-left: 0;
+        width: 100%;
       }
       .description {
         position: static;
@@ -123,11 +134,13 @@
   <main class="projectpage">
     <!-- Colonne gauche -->
     <div class="photos">
-       <!-- image qui prend toute la largeur -->
       <img src="photo/03_PECCADILLES.png" alt="img" loading="lazy">
       <img src="photo/05_PECCADILLES.png" alt="img" loading="lazy">
+
+      <!-- Plein format -->
       <img src="photo/02_PECCADILLES.png" alt="img" class="full-width" loading="lazy">
       <img src="photo/08_PECCADILLES_Plan de travail 1-02.jpg" alt="img" class="full-width" loading="lazy">
+
       <img src="photo/07_PECCADILLES.png" alt="img" loading="lazy">
       <img src="photo/06_PECCADILLES.png" alt="img" loading="lazy">
     </div>
@@ -138,13 +151,13 @@
         <span style="color:#f5b1d0;">[packaging] [2025]</span>
         <br><br>
         Peccadilles is reinventing snacking by making insect-based foods
-more accessible.
-To embody this mainstream approach, I designed striking
-packaging, repurposing the famous <strong>“Keep calm and eat
-Peccadilles” </strong>slogan to capture attention and normalize
-entomophagy. The symbols highlight the flavors and presence
-of insects through clear and playful iconography, transforming
-curiosity into a culinary and gourmet experience.
+        more accessible.
+        To embody this mainstream approach, I designed striking
+        packaging, repurposing the famous <strong>“Keep calm and eat
+        Peccadilles”</strong> slogan to capture attention and normalize
+        entomophagy. The symbols highlight the flavors and presence
+        of insects through clear and playful iconography, transforming
+        curiosity into a culinary and gourmet experience.
       </p>
       <a class="suivant" href="barthes.html">Next</a>
       <a class="precedent" href="index.html">Home</a>
