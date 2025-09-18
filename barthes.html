@@ -21,11 +21,21 @@
       border-bottom: 1px solid #eee;
     }
 
+    /* Lien "Salomé Jollit" */
     .brand {
       text-decoration: none;
       color: #000;
       font-weight: bold;
       font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .brand img {
+      height: 28px;
+      width: auto;
+      display: block;
     }
 
     header nav a {
@@ -100,21 +110,19 @@
   </style>
 </head>
 <body>
-  <header class="tete">
-  <div class="logo"style="display: flex; align-items: center; gap: 8px;">
-    <!-- Salomé Jollit cliquable -->
-    <span>Salomé Jollit</span>
-    <a href="index.html">
-      <img src="photo/logo.svg" alt="Logo" class="logo-img">
+  <header>
+    <!-- Texte + logo cliquables ensemble -->
+    <a href="index.html" class="brand">
+      Salomé Jollit
+      <img src="photo/logo.svg" alt="Logo">
     </a>
-  </div>
 
-  <nav class="nav">
-    <a href="index.html">Work</a>
-    <a href="cv.html">About</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
+    <nav class="nav">
+      <a href="index.html">Work</a>
+      <a href="cv.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
   <main class="projectpage">
     <!-- Colonne gauche -->
