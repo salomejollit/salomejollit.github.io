@@ -21,16 +21,21 @@
       border-bottom: 1px solid #eee;
     }
 
-    /* Lien du logo/nom */
+    /* Lien "Salomé Jollit" */
     .brand {
-      text-decoration: none; /* enlève le soulignement */
-      color: #000; /* noir */
+      text-decoration: none;
+      color: #000;
       font-weight: bold;
       font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
 
-    .brand:hover {
-      text-decoration: underline; /* optionnel : souligné au survol */
+    .brand img {
+      height: 28px;
+      width: auto;
+      display: block;
     }
 
     header nav a {
@@ -46,11 +51,11 @@
       padding: 20px;
     }
 
-    /* Colonne gauche (photos) */
+    /* Colonne gauche (photos en colonne simple) */
     .photos {
       flex: 1;
       display: flex;
-      flex-direction: column;
+      flex-direction: column; /* aligne les images en colonne */
       gap: 12px;
       margin-right: 35%; /* laisse la place pour la colonne fixe */
     }
@@ -66,7 +71,7 @@
     .description {
       position: fixed;
       right: 30px;
-      top: 50px; /* <-- corrigé ici */
+      top: 50px;
       width: 30%;
       background: #fff;
     }
@@ -100,10 +105,13 @@
 </head>
 <body>
   <header>
-    <!-- Salomé Jollit cliquable -->
-    <a href="index.html" class="brand">Salomé Jollit</a>
-    
-    <nav>
+    <!-- Texte + logo cliquables ensemble -->
+    <a href="index.html" class="brand">
+      Salomé Jollit
+      <img src="photo/logo.svg" alt="Logo">
+    </a>
+
+    <nav class="nav">
       <a href="index.html">Work</a>
       <a href="cv.html">About</a>
       <a href="contact.html">Contact</a>
@@ -115,18 +123,21 @@
     <div class="photos">
       <img class="img" src="photo/scan mdp 3_web.jpg" alt="img" >
       <img class="img" src="photo/scan mdp_web.jpg" alt="img">
-      <img class="img" src="photo/scan mdp4_web.jpg" alt="img">
+      <img class="img" src="photo/scan mdp4_web.jpg" alt="img"> 
     </div>
 
     <!-- Colonne droite -->
     <aside class="description">
-      <p><strong>PASSWORD</strong><br><br>
+      <p><strong>PASSWORD</strong><br>
+        <span style="color:#f5b1d0;">[edition] [2023]</span>
+        <br><br>
 Creation of a fanzine as part of a workshop on risography. 
-                The theme was urgency. Working in groups of three, we chose to focus on technology and AI. Using monochrome printing, we laid out three articles on this theme. 
-      </p>
-      <a class="suivant" href="sem.html">Next</a>
-      <a class="precedent" href="index.html">Home</a>
+                The theme was urgency. Working in groups of three, we chose to focus on technology and AI. Using monochrome printing, we laid out three articles on this theme. </p>            
+         <a class="suivant" href="roger.html">Next</a>
+        <a class="precedent" href="index.html">Home</a>
     </aside>
   </main>
 </body>
 </html>
+
+
