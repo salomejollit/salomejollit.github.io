@@ -19,7 +19,7 @@ body {
 }
 
 .brand {
-  text-decoration: none !important; /* force l'absence de soulignement */
+  text-decoration: none !important;
   color: #000000;
   font-weight: 800;
   font-size: 1.2rem;
@@ -51,10 +51,31 @@ body {
 
 .projectpage .photos {
   flex: 2;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 12px;
 }
+
+/* wrapper pour iframe responsive */
+.iframe-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* ratio 16:9 par défaut */
+  overflow: hidden;
+  border-radius: 6px;
+  background: #fafafa;
+}
+.iframe-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+/* images normales */
 .projectpage .photos img {
   width: 100%;
   height: auto;
@@ -94,37 +115,13 @@ body {
   }
 }
 
-.full-width {
-  grid-column: span 2;
-}
-
-a.brand,
-a.brand:link,
-a.brand:visited,
-a.brand:hover,
-a.brand:active {
-  text-decoration: none !important;
-  color: #000000 !important;
-
-  .tete .brand,
-.tete .brand:link,
-.tete .brand:visited,
-.tete .brand:hover,
-.tete .brand:active {
-  text-decoration: none !important;
-  color: #000 !important;
-  border: none !important;
-  outline: none !important;
-}
-
-}
-/* Force pour TOUS les liens */
+/* liens force */
 a {
   text-decoration: none !important;
   color: #000 !important;
 }
 
-/* Et si tu veux que ça ne s’applique qu’au titre */
+/* brand spécifique */
 .tete .brand {
   text-decoration: none !important;
   color: #000 !important;
@@ -138,15 +135,9 @@ header .logo a:active {
   text-decoration: none !important;
   color: #000 !important;
 }
+
 .logo-img {
   height: 28px;
   width: auto;
   display: block;
 }
-
-
-
-
-
-
-
