@@ -52,13 +52,14 @@
       border-radius: 6px;
     }
 
-    /* Images plein format : elles s'étendent sur les 2 colonnes du grid */
-    .full-width {
-      grid-column: 1 / -1; /* span across both columns */
-      width: 100%;
-      border-radius: 0;
-      margin: 0; /* remove gaps on edges */
-    }
+    /* Images plein écran */
+.full-width {
+  width: 100%;       /* prend toute la largeur de la colonne photos */
+  max-width: 100%;
+  border-radius: 0;  /* si tu veux garder les coins carrés */
+  margin-left: 0;    /* plus besoin de décalage */
+}
+
 
     /* Colonne description : sticky pour rester visible sans chevauchement */
     .description {
