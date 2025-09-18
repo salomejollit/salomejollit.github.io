@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Salomé Jollit</title>
   <link rel="shortcut icon" type="image/png" href="photo/logo_2.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salomé Jollit</title>
   <style>
-    * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: sans-serif;
@@ -22,6 +21,7 @@
       border-bottom: 1px solid #eee;
     }
 
+    /* Lien "Salomé Jollit" */
     .brand {
       text-decoration: none;
       color: #000;
@@ -31,81 +31,93 @@
       align-items: center;
       gap: 8px;
     }
-    .brand img { height: 28px; width: auto; display:block; }
 
-    nav a { margin-left: 1.5rem; text-decoration: none; color: #000; font-weight: bold; }
-
-    /* Grid principal : contenu (images) | colonne description */
-    .projectpage {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) 30%;
-      gap: 24px;
-      padding: 20px;
-      align-items: start;
+    .brand img {
+      height: 28px;
+      width: auto;
+      display: block;
     }
 
-    /* Images petites (colonne de gauche) */
-    .projectpage img {
+    header nav a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+    }
+
+    /* Mise en page deux colonnes */
+    .projectpage {
+      display: flex;
+      padding: 20px;
+    }
+
+    /* Colonne gauche (photos en grille) */
+    .photos {
+      flex: 1;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
+      gap: 12px;
+      margin-right: 35%; /* laisse la place pour la colonne fixe */
+    }
+
+    .photos img {
       width: 100%;
       height: auto;
-      display: block;
       border-radius: 6px;
+      display: block;
     }
 
-    /* Images plein écran */
-.full-width {
-  width: 100%;       /* prend toute la largeur de la colonne photos */
-  max-width: 100%;
-  border-radius: 0;  /* si tu veux garder les coins carrés */
-  margin-left: 0;    /* plus besoin de décalage */
-}
+    /* Image du milieu qui prend toute la largeur */
+    .photos .full-width {
+      grid-column: 1 / -1; /* prend les 2 colonnes */
+    }
 
-
-    /* Colonne description : sticky pour rester visible sans chevauchement */
+    /* Colonne droite (texte fixe) */
     .description {
-      grid-column: 2;            /* place in second column */
-      align-self: start;
-      position: sticky;
-      top: 80px;                 /* ajuste si ton header change de hauteur */
-      padding-left: 8px;
+      position: fixed;
+      right: 30px;
+      top: 50px;
+      width: 30%;
       background: #fff;
     }
 
     .suivant, .precedent {
       display: inline-block;
+      margin-top: 12px;
+      margin-right: 8px;
       text-decoration: none;
-      color: #000;
+      color: inherit;
       border: 1px solid #ddd;
       padding: 8px 12px;
       border-radius: 6px;
-      margin-top: 12px;
-      margin-right: 8px;
     }
 
-    /* Responsive : colonne unique */
+    /* Responsive */
     @media (max-width: 700px) {
       .projectpage {
-        grid-template-columns: 1fr;
+        flex-direction: column;
+      }
+      .photos {
+        grid-template-columns: 1fr; /* une seule colonne sur mobile */
+        margin-right: 0;
       }
       .description {
         position: static;
-        grid-column: 1;
-        margin-top: 18px;
-        top: auto;
-        padding-left: 0;
+        width: 100%;
+        margin-top: 20px;
       }
-      .full-width { grid-column: 1 / -1; width: 100%; margin: 0; }
     }
   </style>
 </head>
 <body>
   <header>
+    <!-- Texte + logo cliquables ensemble -->
     <a href="index.html" class="brand">
       Salomé Jollit
       <img src="photo/logo.svg" alt="Logo">
     </a>
 
-    <nav>
+    <nav class="nav">
       <a href="index.html">Work</a>
       <a href="cv.html">About</a>
       <a href="contact.html">Contact</a>
@@ -113,12 +125,20 @@
   </header>
 
   <main class="projectpage">
-    <!-- petites images en colonne de gauche (sont des enfants du grid) -->
-    <img src="photo/03_PECCADILLES.png" alt="img" loading="lazy">
-    <!-- la colonne de droite (description) est ajoutée ici mais placée dans la 2e colonne via CSS -->
+    <!-- Colonne gauche -->
+    <div class="photos">
+      <img src="photo/03_PECCADILLES.png" alt="img" loading="lazy">
+      <img src="photo/05_PECCADILLES.png" alt="img" loading="lazy">
+      <img src="photo/02_PECCADILLES.png" alt="img" class="full-width" loading="lazy">
+      <img src="photo/08_PECCADILLES_Plan de travail 1-02.jpg" alt="img" class="full-width" loading="lazy">
+      <img src="photo/07_PECCADILLES.png" alt="img" loading="lazy">
+      <img src="photo/06_PECCADILLES.png" alt="img" loading="lazy">
+    </div>
+
+    <!-- Colonne droite -->
     <aside class="description">
       <p><strong>PECCADILLES</strong><br>
-        <span style="color:#f5b1d0;">[packaging] [2025]</span>
+         <span style="color:#f5b1d0;">[packaging] [2025]</span>
         <br><br>
         Peccadilles is reinventing snacking by making insect-based foods
         more accessible.
@@ -129,18 +149,9 @@
         of insects through clear and playful iconography, transforming
         curiosity into a culinary and gourmet experience.
       </p>
-      <a class="suivant" href="barthes.html">Next</a>
+      <a class="suivant" href="roger.html">Next</a>
       <a class="precedent" href="index.html">Home</a>
     </aside>
-
-    <img src="photo/05_PECCADILLES.png" alt="img" loading="lazy">
-
-    <!-- images plein format qui prennent la largeur entière (ne dépassent pas la description) -->
-    <img src="photo/02_PECCADILLES.png" alt="img" class="full-width" loading="lazy">
-    <img src="photo/08_PECCADILLES_Plan de travail 1-02.jpg" alt="img" class="full-width" loading="lazy">
-
-    <img src="photo/07_PECCADILLES.png" alt="img" loading="lazy">
-    <img src="photo/06_PECCADILLES.png" alt="img" loading="lazy">
   </main>
 </body>
 </html>
