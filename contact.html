@@ -45,66 +45,24 @@
       font-weight: bold;
     }
 
-    /* Mise en page deux colonnes */
-    .projectpage {
-      display: flex;
-      padding: 20px;
+    /* === Centrage du contenu === */
+    main {
+      max-width: 800px;     /* largeur max pour la lisibilité */
+      margin: 60px auto;    /* espace autour + centrage horizontal */
+      padding: 0 20px;      /* marges intérieures gauche/droite */
+      text-align: center;   /* tout le texte centré */
+      line-height: 1.6;     /* meilleure lisibilité */
     }
 
-    /* Colonne gauche (photos en grille) */
-    .photos {
-      flex: 1;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
-      gap: 12px;
-      margin-right: 35%; /* laisse la place pour la colonne fixe */
-    }
-
-    .photos img {
-      width: 100%;
-      height: auto;
-      border-radius: 6px;
-      display: block;
-    }
-
-    /* Image du milieu qui prend toute la largeur */
-    .photos .full-width {
-      grid-column: 1 / -1; /* prend les 2 colonnes */
-    }
-
-    /* Colonne droite (texte fixe) */
-    .description {
-      position: fixed;
-      right: 30px;
-      top: 50px;
-      width: 30%;
-      background: #fff;
-    }
-
-    .suivant, .precedent {
-      display: inline-block;
-      margin-top: 12px;
-      margin-right: 8px;
-      text-decoration: none;
-      color: inherit;
-      border: 1px solid #ddd;
-      padding: 8px 12px;
-      border-radius: 6px;
+    main p {
+      margin-bottom: 1rem;  /* espace entre paragraphes */
     }
 
     /* Responsive */
     @media (max-width: 700px) {
-      .projectpage {
-        flex-direction: column;
-      }
-      .photos {
-        grid-template-columns: 1fr; /* une seule colonne sur mobile */
-        margin-right: 0;
-      }
-      .description {
-        position: static;
-        width: 100%;
-        margin-top: 20px;
+      main {
+        margin: 30px auto;
+        padding: 0 15px;
       }
     }
   </style>
@@ -122,46 +80,18 @@
       <a href="cv.html">About</a>
     </nav>
   </header>
-<center>
-<main>
+
+  <main>
     <p>
       Hi, I'm a graphic design student looking for a 3-month internship in Europe from February 23 to May 18.
     </p>
 
-    <p>If you are interested in my work, please contact me via email: <strong><span style="color:#f5b1d0;">salomejollit@gmail.com</span></strong></p>
+    <p>If you are interested in my work, please contact me via email: 
+      <strong><span style="color:#f5b1d0;">salomejollit@gmail.com</span></strong>
+    </p>
+
     <p><strong>Website coded by myself :)</strong></p>
-  <p>@ 2025 Salomé Jollit</p>
+    <p>@ 2025 Salomé Jollit</p>
   </main>
-  </center>
 </body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</html>
