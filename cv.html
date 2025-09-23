@@ -92,6 +92,22 @@
       border-radius: 6px;
     }
 
+    /* === Mise en page texte (CV) === */
+    main {
+      max-width: 800px;   /* largeur max lisible */
+      margin: 40px auto;  /* centre le contenu et ajoute de l’air */
+      padding: 0 20px;    /* marges intérieures gauche/droite */
+      line-height: 1.6;   /* meilleure lisibilité */
+    }
+
+    main p {
+      margin-bottom: 1rem; /* espace entre les paragraphes */
+    }
+
+    .retrait {
+      margin-left: 20px; /* léger retrait pour la liste */
+    }
+
     /* Responsive */
     @media (max-width: 700px) {
       .projectpage {
@@ -105,6 +121,10 @@
         position: static;
         width: 100%;
         margin-top: 20px;
+      }
+      main {
+        margin: 20px;
+        padding: 0 10px;
       }
     }
   </style>
@@ -122,8 +142,8 @@
       <a href="contact.html">Contact</a>
     </nav>
   </header>
-<center>
-<main>
+
+  <main>
     <p>
       Hi, I'm a graphic design student looking for a 3-month internship in Europe from February 23 to May 18.
     </p>
@@ -142,7 +162,7 @@
       <p class="retrait">→ June 2023: Job shadowing at the Centre Pompidou, Paris, France</p>
     </section>
 
-  <section class="formations">
+    <section class="formations">
       <p><strong><span style="color:#f5b1d0;">SOFTWARE</span></strong></p>
       <p class="retrait">→ Fields (Visual Identity, Branding, Edition, Advertising, Typography, Motion Design, Photography, Film Making)</p>
       <p class="retrait">→ Adobe Creative Suite (Photoshop, Illustrator, Indesign, After Effects)</p>
@@ -158,7 +178,7 @@
       <p class="retrait">→ Reading books and watching movies</p>
     </section>
 
-  <section class="formations">
+    <section class="formations">
       <p><strong><span style="color:#f5b1d0;">LANGUAGES</span></strong></p>
       <p class="retrait">→ French: native speaker</p>
       <p class="retrait">→ English: intermediate</p>
@@ -169,44 +189,5 @@
     <p><strong>Website coded by myself :)</strong></p>
     <p>@ 2025 Salomé Jollit</p>
   </main>
-  </center>
 </body>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</html>
