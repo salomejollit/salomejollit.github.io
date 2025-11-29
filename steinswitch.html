@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Salomé Jollit</title>
+
   <style>
     body {
       margin: 0;
@@ -21,7 +22,6 @@
       border-bottom: 1px solid #eee;
     }
 
-    /* Lien "Salomé Jollit" */
     .brand {
       text-decoration: none;
       color: #000;
@@ -45,34 +45,34 @@
       font-weight: bold;
     }
 
-    /* Mise en page deux colonnes */
+    /* STRUCTURE 2 COLONNES */
     .projectpage {
       display: flex;
       padding: 20px;
     }
 
-    /* Colonne gauche (photos en colonne simple) */
+    /* Zone de gauche */
     .photos {
       flex: 1;
-      display: flex;
-      flex-direction: column; /* aligne les images en colonne */
-      gap: 12px;
-      margin-right: 35%; /* laisse la place pour la colonne fixe */
+      max-width: 65%;    /* 🔥 Empêche le contenu d'empiéter sur la description */
+      padding-right: 20px;
+      box-sizing: border-box;
     }
 
-    .photos img {
+    .photos img,
+    .photos video {
       width: 100%;
       height: auto;
       border-radius: 6px;
       display: block;
     }
 
-    /* Colonne droite (texte fixe) */
+    /* Zone droite (fixe) */
     .description {
       position: fixed;
       right: 30px;
-      top: 50px;
-      width: 30%;
+      top: 100px;
+      width: 28%;
       background: #fff;
     }
 
@@ -92,9 +92,12 @@
       .projectpage {
         flex-direction: column;
       }
+
       .photos {
-        margin-right: 0;
+        max-width: 100%;
+        padding-right: 0;
       }
+
       .description {
         position: static;
         width: 100%;
@@ -103,9 +106,10 @@
     }
   </style>
 </head>
+
 <body>
+
   <header>
-    <!-- Texte + logo cliquables ensemble -->
     <a href="index.html" class="brand">
       Salomé Jollit
       <img src="photo/logo.svg" alt="Logo">
@@ -119,24 +123,27 @@
   </header>
 
   <main class="projectpage">
-    <!-- Colonne gauche -->
+
+    <!-- COLONNE GAUCHE -->
     <div class="photos">
-       <video src="photo/STEINSWITCH.mp4">
+      <video src="photo/STEINSWITCH.mp4" controls></video>
     </div>
 
-    <!-- Colonne droite -->
+    <!-- COLONNE DROITE -->
     <aside class="description">
       <p><strong>STEINSWITCH</strong><br>
         <span style="color:#f5b1d0;">[video] [2025]</span>
         <br><br>
         We are Steinswitch, a start-up launching our app developed in collaboration with your new mayor of Paris: A mandatory mobility lottery that randomly provides you with a new means of transportation each week. Thanks to us, you can smile and relax during your commute. No more cliques, no more resentment, no more disrespectful behavior. Steinswitch: smile, you're about to switch!
-<br><br>Work in collaboration with Fiona Thely, Enzo Pratmarty, and Flora Titrikou<br>
-
-
+        <br><br>
+        Work in collaboration with Fiona Thely, Enzo Pratmarty, and Flora Titrikou<br>
       </p>
+
       <a class="suivant" href="arielxpopstar.html">Next</a>
       <a class="precedent" href="index.html">Home</a>
     </aside>
+
   </main>
+
 </body>
 </html>
