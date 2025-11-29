@@ -1,1 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <link rel="shortcut icon" type="image/png" href="photo/logo_2.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salomé Jollit</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #fff;
+      color: #000;
+    }
 
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid #eee;
+    }
+
+    /* Lien "Salomé Jollit" */
+    .brand {
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .brand img {
+      height: 28px;
+      width: auto;
+      display: block;
+    }
+
+    header nav a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+    }
+
+    /* Mise en page deux colonnes */
+    .projectpage {
+      display: flex;
+      padding: 20px;
+    }
+
+    /* Colonne gauche (photos en colonne simple) */
+    .photos {
+      flex: 1;
+      display: flex;
+      flex-direction: column; /* aligne les images en colonne */
+      gap: 12px;
+      margin-right: 35%; /* laisse la place pour la colonne fixe */
+    }
+
+    .photos img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+      display: block;
+    }
+
+    /* Colonne droite (texte fixe) */
+    .description {
+      position: fixed;
+      right: 30px;
+      top: 50px;
+      width: 30%;
+      background: #fff;
+    }
+
+    .suivant, .precedent {
+      display: inline-block;
+      margin-top: 12px;
+      margin-right: 8px;
+      text-decoration: none;
+      color: inherit;
+      border: 1px solid #ddd;
+      padding: 8px 12px;
+      border-radius: 6px;
+    }
+
+    /* Responsive */
+    @media (max-width: 700px) {
+      .projectpage {
+        flex-direction: column;
+      }
+      .photos {
+        margin-right: 0;
+      }
+      .description {
+        position: static;
+        width: 100%;
+        margin-top: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <!-- Texte + logo cliquables ensemble -->
+    <a href="index.html" class="brand">
+      Salomé Jollit
+      <img src="photo/logo.svg" alt="Logo">
+    </a>
+
+    <nav class="nav">
+      <a href="index.html">Work</a>
+      <a href="cv.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="projectpage">
+    <!-- Colonne gauche -->
+    <div class="photos">
+      <img src="photo/poster 1.png" alt="img">
+      <img src="photo/IMG_20250606_161238.jpg" alt="img">
+      <img src="photo/conclusion.jpg" alt="img">
+      <img src="photo/POST-INSTA.jpeg" alt="img">
+      <img src="photo/STORY-INSTA.jpeg" alt="img">
+      <img src="photo/Capture d’écran 2025-09-16 à 09.49.21.png" alt="img">
+      <img src="photo/IMG_20250610_113844.jpg" alt="img">
+      <img src="photo/poster 2.png" alt="img">
+    </div>
+
+    <!-- Colonne droite -->
+    <aside class="description">
+      <p><strong>ARIEL ON TOUR</strong><br>
+        <span style="color:#f5b1d0;">[activation] [2025]</span>
+        <br><br>
+        With the launch of its new laundry sheets, Ariel decided to break the mold by transforming the everyday chore of doing laundry into a cultural, pop, and unexpected experience. <br>
+To create surprise, the brand imagined “Ariel,” a fake international pop icon, a star who doesn't exist... but who will set social media abuzz as if she were real. Ariel launched a fictional tour, 
+        “Ariel On Tour,” where each laundry sheet became a ticket to a musical, fun, and exaggeratedly pop universe.<br>
+The activation comes to life on Instagram through a series of vox pops where people are introduced to the “new star.” Passersby are invited to listen to AI-generated song excerpts.
+Each of Ariel's fictional “albums” corresponds to a new artistic direction and a new fragrance.
+
+          <BR>This campaign is conducted in a fictional setting.<BR>
+
+      </p>
+      <a class="suivant" href="peccadilles.html">Next</a>
+      <a class="precedent" href="index.html">Home</a>
+    </aside>
+  </main>
+</body>
+</html>
