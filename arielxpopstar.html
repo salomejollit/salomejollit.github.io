@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Salomé Jollit</title>
+
   <style>
     body {
       margin: 0;
@@ -21,7 +22,6 @@
       border-bottom: 1px solid #eee;
     }
 
-    /* Lien "Salomé Jollit" */
     .brand {
       text-decoration: none;
       color: #000;
@@ -45,34 +45,37 @@
       font-weight: bold;
     }
 
-    /* Mise en page deux colonnes */
+    /* STRUCTURE 2 COLONNES */
     .projectpage {
       display: flex;
       padding: 20px;
     }
 
-    /* Colonne gauche (photos en colonne simple) */
+    /* Colonne GAUCHE */
     .photos {
       flex: 1;
+      max-width: 65%;   /* 🔥 Empêche l'empiètement sur le texte */
+      padding-right: 20px;
+      box-sizing: border-box;
       display: flex;
-      flex-direction: column; /* aligne les images en colonne */
+      flex-direction: column;
       gap: 12px;
-      margin-right: 35%; /* laisse la place pour la colonne fixe */
     }
 
-    .photos img {
+    .photos img,
+    .photos video {
       width: 100%;
       height: auto;
       border-radius: 6px;
       display: block;
     }
 
-    /* Colonne droite (texte fixe) */
+    /* Colonne DROITE FIXE */
     .description {
       position: fixed;
       right: 30px;
-      top: 50px;
-      width: 30%;
+      top: 100px;
+      width: 28%;
       background: #fff;
     }
 
@@ -92,9 +95,12 @@
       .projectpage {
         flex-direction: column;
       }
+
       .photos {
-        margin-right: 0;
+        max-width: 100%;
+        padding-right: 0;
       }
+
       .description {
         position: static;
         width: 100%;
@@ -103,9 +109,10 @@
     }
   </style>
 </head>
+
 <body>
+
   <header>
-    <!-- Texte + logo cliquables ensemble -->
     <a href="index.html" class="brand">
       Salomé Jollit
       <img src="photo/logo.svg" alt="Logo">
@@ -119,6 +126,7 @@
   </header>
 
   <main class="projectpage">
+
     <!-- Colonne gauche -->
     <div class="photos">
       <img src="photo/ARIEL_PACK.png" alt="img">
@@ -134,17 +142,23 @@
         <span style="color:#f5b1d0;">[activation] [2025]</span>
         <br><br>
         With the launch of its new laundry sheets, Ariel decided to break the mold by transforming the everyday chore of doing laundry into a cultural, pop, and unexpected experience. <br><br>
-To create surprise, the brand imagined “Ariel,” a fake international pop icon, a star who doesn't exist... but who will set social media abuzz as if she were real. Ariel launched a fictional tour, 
-        “Ariel On Tour,” where each laundry sheet became a ticket to a musical, fun, and exaggeratedly pop universe.<br><br>
-The activation comes to life on Instagram through a series of vox pops where people are introduced to the “new star.” Passersby are invited to listen to AI-generated song excerpts.
-Each of Ariel's fictional “albums” corresponds to a new artistic direction and a new fragrance.
-<BR><BR>Work in collaboration with Eglantine Duflot, Mya Hédin, and Cécile Cabel
-        <BR><BR>This campaign is conducted in a fictional setting.<BR>
 
+        To create surprise, the brand imagined “Ariel,” a fake international pop icon, a star who doesn't exist... but who will set social media abuzz as if she were real. Ariel launched a fictional tour, 
+        “Ariel On Tour,” where each laundry sheet became a ticket to a musical, fun, and exaggeratedly pop universe.<br><br>
+
+        The activation comes to life on Instagram through a series of vox pops where people are introduced to the “new star.” Passersby are invited to listen to AI-generated song excerpts.
+        Each of Ariel's fictional “albums” corresponds to a new artistic direction and a new fragrance.
+        <br><br>
+        Work in collaboration with Eglantine Duflot, Mya Hédin, and Cécile Cabel
+        <br><br>
+        This campaign is conducted in a fictional setting.
       </p>
+
       <a class="suivant" href="projetdediplome.html">Next</a>
       <a class="precedent" href="index.html">Home</a>
     </aside>
+
   </main>
+
 </body>
 </html>
